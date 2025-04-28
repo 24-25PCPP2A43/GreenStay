@@ -5,7 +5,8 @@
         <nav class="main-nav">
           <!-- Logo -->
           <a href="../../index.php" class="logo">
-            <img src="../../assets/images/logo.png" alt="EcoTravel Logo">
+            <!-- Assurez-vous que le chemin du logo est correct -->
+            <img src="/EcoTravel/assets/images/ecoTravelLogo.png" alt="EcoTravel Logo">
           </a>
 
           <!-- Navigation -->
@@ -17,7 +18,8 @@
             <li><a href="../../reservation.php">Réservez</a></li>
           </ul>   
 
-          <a class='menu-trigger'>
+          <!-- Menu Trigger (pour mobile) -->
+          <a class="menu-trigger">
             <span>Menu</span>
           </a>
         </nav>

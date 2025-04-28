@@ -2,24 +2,32 @@
 include '../../config/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sujet = $_POST['sujet'];
-    $message = $_POST['message'];
-    $client_id = $_POST['client_id'];
-    $reservation_id = $_POST['reservation_id'];
+    $sujet = trim($_POST['sujet']);
+    $message = trim($_POST['message']);
+    $client_id = trim($_POST['client_id']);
+    $reservation_id = trim($_POST['reservation_id']);
 
-    $sql = "INSERT INTO reclamations (sujet, message, statut, client_id, reservation_id) 
-            VALUES (:sujet, :message, 'Nouveau', :client_id, :reservation_id)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':sujet', $sujet);
-    $stmt->bindParam(':message', $message);
-    $stmt->bindParam(':client_id', $client_id);
-    $stmt->bindParam(':reservation_id', $reservation_id);
-
-    if ($stmt->execute()) {
-        header("Location: listReclamations.php?success=1");
-        exit();
+    // Validation côté serveur
+    if (empty($sujet) || empty($message) || empty($client_id) || empty($reservation_id)) {
+        $error = "Tous les champs doivent être remplis.";
+    } elseif (!is_numeric($client_id) || !is_numeric($reservation_id)) {
+        $error = "L'ID client et l'ID réservation doivent être des nombres valides.";
     } else {
-        $error = "Une erreur est survenue. Veuillez réessayer.";
+        // Préparer la requête d'insertion
+        $sql = "INSERT INTO reclamations (sujet, message, statut, client_id, reservation_id) 
+                VALUES (:sujet, :message, 'Nouveau', :client_id, :reservation_id)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':sujet', $sujet);
+        $stmt->bindParam(':message', $message);
+        $stmt->bindParam(':client_id', $client_id);
+        $stmt->bindParam(':reservation_id', $reservation_id);
+
+        if ($stmt->execute()) {
+            header("Location: listReclamations.php?success=1");
+            exit();
+        } else {
+            $error = "Une erreur est survenue. Veuillez réessayer.";
+        }
     }
 }
 ?>
@@ -27,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navbar.php'; ?>
 
-<!-- 🌄 Ajout du background image personnalisé pour la section -->
 <style>
   body {
     background-image: url('/EcoTravel/assets/images/best-03.jpg');
@@ -104,7 +111,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="alert alert-danger"><?= $error ?></div>
 <?php endif; ?>
 
-<!-- 📝 Formulaire stylisé avec animation -->
+<?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+  <div class="alert alert-success">Réclamation ajoutée avec succès !</div>
+<?php endif; ?>
+
 <section class="section">
   <div class="container">
     <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.2s">
@@ -113,76 +123,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="card-body p-5">
             <h2 class="mb-4 text-center">📩 Ajouter une <em>Réclamation</em></h2>
 
-            <form name="reclamationForm" method="POST" action="" onsubmit="return validateForm()">
-              <div class="form-group mb-3">
-                <label for="sujet">Sujet <span class="text-danger">*</span></label>
-                <input type="text" name="sujet" id="sujet" class="form-control" required>
-              </div>
-
-              <div class="form-group mb-3">
-                <label for="message">Message <span class="text-danger">*</span></label>
-                <textarea name="message" id="message" rows="4" class="form-control" required></textarea>
-              </div>
-
-              <div class="form-group mb-3">
-                <label for="client_id">ID Client <span class="text-danger">*</span></label>
-                <input type="text" name="client_id" id="client_id" class="form-control" required>
-              </div>
-
-              <div class="form-group mb-4">
-                <label for="reservation_id">ID Réservation <span class="text-danger">*</span></label>
-                <input type="text" name="reservation_id" id="reservation_id" class="form-control" required>
-              </div>
-
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-lg px-5">
-                  ✉️ Envoyer
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<?php include 'includes/footer.php'; ?>
-
-<!-- JavaScript pour la validation -->
-<script>
-function validateForm() {
-    // Récupérer les valeurs des champs
-    var sujet = document.forms["reclamationForm"]["sujet"].value;
-    var message = document.forms["reclamationForm"]["message"].value;
-    var clientId = document.forms["reclamationForm"]["client_id"].value;
-    var reservationId = document.forms["reclamationForm"]["reservation_id"].value;
-
-    // Validation du sujet
-    if (sujet.trim() == "") {
-        alert("Le champ 'Sujet' ne peut pas être vide.");
-        return false;
-    }
-
-    // Validation du message
-    if (message.trim() == "") {
-        alert("Le champ 'Message' ne peut pas être vide.");
-        return false;
-    }
-
-    // Validation de client_id (doit être un nombre)
-    if (isNaN(clientId) || clientId.trim() == "") {
-        alert("L'ID du client doit être un nombre valide.");
-        return false;
-    }
-
-    // Validation de reservation_id (doit être un nombre)
-    if (isNaN(reservationId) || reservationId.trim() == "") {
-        alert("L'ID de la réservation doit être un nombre valide.");
-        return false;
-    }
-
-    // Si toutes les validations passent
-    return true;
-}
-</script>
+            <form name="reclamationForm" method="POST" action

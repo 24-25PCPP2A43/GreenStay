@@ -6,14 +6,23 @@ class Reclamation {
     private $sujet;
     private $message;
     private $statut;
+    private $date_creation;
+    private $reponse_id;
+    private $reponse;
 
-    public function __construct($sujet, $message, $statut, $client_id, $reservation_id, $id = null) {
+    // Constructeur
+    public function __construct($id = null, $client_id = null, $reservation_id = null, $sujet = null, 
+                                $message = null, $statut = null, $date_creation = null, $reponse_id = null, 
+                                $reponse = null) {
+        $this->id = $id;
+        $this->client_id = $client_id;
+        $this->reservation_id = $reservation_id;
         $this->sujet = $sujet;
         $this->message = $message;
         $this->statut = $statut;
-        $this->client_id = $client_id;
-        $this->reservation_id = $reservation_id;
-        $this->id = $id;
+        $this->date_creation = $date_creation;
+        $this->reponse_id = $reponse_id;
+        $this->reponse = $reponse;
     }
 
     // Getters
@@ -41,6 +50,18 @@ class Reclamation {
         return $this->statut;
     }
 
+    public function getDateCreation() {
+        return $this->date_creation;
+    }
+
+    public function getReponseId() {
+        return $this->reponse_id;
+    }
+
+    public function getReponse() {
+        return $this->reponse;
+    }
+
     // Setters
     public function setId($id) {
         $this->id = $id;
@@ -64,6 +85,18 @@ class Reclamation {
 
     public function setStatut($statut) {
         $this->statut = $statut;
+    }
+
+    public function setDateCreation($date_creation) {
+        $this->date_creation = $date_creation;
+    }
+
+    public function setReponseId($reponse_id) {
+        $this->reponse_id = $reponse_id;
+    }
+
+    public function setReponse($reponse) {
+        $this->reponse = $reponse;
     }
 }
 ?>

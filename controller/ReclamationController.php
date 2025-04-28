@@ -45,4 +45,14 @@ if (isset($_GET['update_status'])) {
         header("Location: ../view/back/viewReclamations.php"); // Redirection vers la page admin
     }
 }
+
+// Ajouter une réponse de l'admin à une réclamation
+if (isset($_POST['add_response'])) {
+    $reclamation_id = $_POST['reclamation_id'];
+    $reponse = $_POST['reponse']; // Réponse de l'admin
+    
+    if ($reclamation->addResponse($reclamation_id, $reponse)) {
+        header("Location: ../view/front/listReclamations.php"); // Redirection vers la liste des réclamations
+    }
+}
 ?>

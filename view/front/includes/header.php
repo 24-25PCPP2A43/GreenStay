@@ -17,5 +17,8 @@
   <link rel="stylesheet" href="/EcoTravel/assets/css/owl.css">
   <link rel="stylesheet" href="/EcoTravel/assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/EcoTravel/assets/css/custom.css">
 </head>
 <body>
