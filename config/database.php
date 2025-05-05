@@ -12,4 +12,7 @@ try {
     // En cas d'erreur de connexion, afficher le message d'erreur
     die("Connection failed: " . $e->getMessage());
 }
+
+$key = 'sk-ta_clé_secrète_ici';
+
 ?>

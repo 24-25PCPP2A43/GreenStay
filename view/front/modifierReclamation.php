@@ -17,21 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les nouvelles informations de la réclamation
     $sujet = $_POST['sujet'];
     $message = $_POST['message'];
-    $statut = $_POST['statut'];
 
     // Mettre à jour la réclamation dans la base de données
-    $sql = "UPDATE reclamations SET sujet = :sujet, message = :message, statut = :statut WHERE id = :id";
+    $sql = "UPDATE reclamations SET sujet = :sujet, message = :message WHERE id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':sujet', $sujet);
     $stmt->bindParam(':message', $message);
-    $stmt->bindParam(':statut', $statut);
     $stmt->bindParam(':id', $id);
 
     if ($stmt->execute()) {
         // Message de confirmation
         $message_success = "Réclamation modifiée avec succès !";
         // Redirection vers la liste après 3 secondes
-        header("refresh:3;url=listReclamations.php");
+        //header("refresh:3;url=listReclamations.php");  // Removed refresh header
     } else {
         $message_error = "Erreur lors de la modification de la réclamation.";
     }
@@ -114,12 +112,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php if (isset($message_success)) { ?>
     <div class="alert alert-success">
-        <img src="../../images/green_checkmark.png" alt="Succès" style="width: 30px; vertical-align: middle; margin-right: 10px;"> 
+        <img src="../../images/green_checkmark.png" alt="Succès" style="width: 30px; vertical-align: middle; margin-right: 10px;">
         <?= $message_success ?>
     </div>
 <?php } elseif (isset($message_error)) { ?>
     <div class="alert alert-error">
-        <img src="../../images/error_icon.png" alt="Erreur" style="width: 30px; vertical-align: middle; margin-right: 10px;"> 
+        <img src="../../images/error_icon.png" alt="Erreur" style="width: 30px; vertical-align: middle; margin-right: 10px;">
         <?= $message_error ?>
     </div>
 <?php } ?>
@@ -144,14 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <textarea name="message" rows="4" class="form-control" required><?= htmlspecialchars($reclamation['message']) ?></textarea>
               </div>
 
-              <div class="form-group mb-3">
-                <label for="statut">Statut <span class="text-danger">*</span></label>
-                <select name="statut" class="form-control" required>
-                  <option value="Nouveau" <?= $reclamation['statut'] == 'Nouveau' ? 'selected' : '' ?>>Nouveau</option>
-                  <option value="En cours de traitement" <?= $reclamation['statut'] == 'En cours de traitement' ? 'selected' : '' ?>>En cours de traitement</option>
-                  <option value="Traité" <?= $reclamation['statut'] == 'Traité' ? 'selected' : '' ?>>Traité</option>
-                </select>
-              </div>
+
 
               <div class="text-center">
                 <button type="submit" class="btn btn-primary btn-lg px-5">
@@ -165,5 +156,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 </section>
+
+<script>
+  <?php if (isset($message_success)) { ?>
+    setTimeout(function() {
+      window.location.href = "listReclamations.php";
+    }, 3000); // Redirect after 3 seconds
+  <?php } ?>
+</script>
 
 <?php include 'includes/footer.php'; ?>
