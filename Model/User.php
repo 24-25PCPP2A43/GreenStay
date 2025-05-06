@@ -53,6 +53,17 @@ class  utilisateurs
         return $this->id;
     }
 
+    public function setToken($token)
+    {
+        $this->token = $token;
+    }
+
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+
 }
 
 ?>

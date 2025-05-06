@@ -2,7 +2,6 @@
 global $row;
 require_once __DIR__ . '/../../Config/database.php';
 
-
 // Initialisation des variables d'erreur
 $nomErr = $prenomErr = $emailErr = $passwordErr = $telephoneErr = $roleErr = "";
 $emailExistErr = "";
@@ -17,10 +16,9 @@ if (isset($_POST["submit"])) {
     $telephone = $_POST['telephone'] ?? '';
     $role = $_POST['role'] ?? '';
 
-    // Validation des champs
+    // Validation
     $validForm = true;
 
-    // Validation du nom
     if (empty($nom)) {
         $nomErr = "Le nom est requis";
         $validForm = false;
@@ -29,7 +27,6 @@ if (isset($_POST["submit"])) {
         $validForm = false;
     }
 
-    // Validation du prénom
     if (empty($prenom)) {
         $prenomErr = "Le prénom est requis";
         $validForm = false;
@@ -38,7 +35,6 @@ if (isset($_POST["submit"])) {
         $validForm = false;
     }
 
-    // Validation de l'email
     if (empty($email)) {
         $emailErr = "L'email est requis";
         $validForm = false;
@@ -47,16 +43,14 @@ if (isset($_POST["submit"])) {
         $validForm = false;
     }
 
-    // Validation du mot de passe
     if (empty($password)) {
         $passwordErr = "Le mot de passe est requis";
         $validForm = false;
     } elseif (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/', $password)) {
-        $passwordErr = "Doit contenir : 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre";
+        $passwordErr = "8 caractères min., 1 majuscule, 1 minuscule, 1 chiffre";
         $validForm = false;
     }
 
-    // Validation du téléphone
     if (empty($telephone)) {
         $telephoneErr = "Le numéro de téléphone est requis";
         $validForm = false;
@@ -65,7 +59,6 @@ if (isset($_POST["submit"])) {
         $validForm = false;
     }
 
-    // Validation du rôle
     if (empty($role)) {
         $roleErr = "Le rôle est requis";
         $validForm = false;
@@ -73,12 +66,10 @@ if (isset($_POST["submit"])) {
         $roleErr = "Rôle non valide";
         $validForm = false;
     }
-    // Vérification de l'unicité de l'email
+
     if ($validForm) {
         try {
             $conn = Database::connect();
-
-            // Vérifier si l'email existe déjà
             $stmt = $conn->prepare("SELECT id FROM utilisateurs WHERE email = :email");
             $stmt->bindParam(':email', $email);
             $stmt->execute();
@@ -87,7 +78,6 @@ if (isset($_POST["submit"])) {
                 $emailExistErr = "Cet email est déjà utilisé";
                 $validForm = false;
             }
-
         } catch (PDOException $e) {
             echo "Erreur de vérification : " . $e->getMessage();
             $validForm = false;
@@ -97,10 +87,7 @@ if (isset($_POST["submit"])) {
     if ($validForm) {
         try {
             $conn = Database::connect();
-
-            // Hashage du mot de passe
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
             $stmt = $conn->prepare("INSERT INTO utilisateurs 
                 (nom, prenom, email, password, telephone, role) 
                 VALUES (:nom, :prenom, :email, :password, :telephone, :role)");
@@ -125,109 +112,118 @@ if (isset($_POST["submit"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un utilisateur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Styles personnalisés -->
+    <style>
+        body {
+            background-color: #f4f7fc;
+        }
 
-    <title>Users Dashboard</title>
+        .card {
+            border-radius: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #1D548DFF;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #1D548DFF;
+            border-color: #1D548DFF;
+        }
+    </style>
 </head>
 
-<body style="background-color: #1D548DFF;">
-    <nav class="navbar navbar-light justify-content-center fs-3 mb-5"
-        style="background-color:rgb(90, 251, 216);color: #1D548DFF;">
-        Users Dashboard
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-brand mb-0 h1">Dashboard - Ajouter un utilisateur</span>
+        </div>
     </nav>
 
     <div class="container">
-        <div class="text-center mb-4">
-            <h3 style="color:rgb(90, 251, 216);">Ajouter un nouveau utilisateur</h3>
-            <p class="text-muted" style="color:rgb(90, 251, 216);">Complete le form pour ajouter un nouveau utilisateur</p>
-        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="card p-4">
+                    <h4 class="mb-4 text-center">Nouveau utilisateur</h4>
 
-        <div class="container d-flex justify-content-center">
-            <form action="" method="post" style="width:50vw; min-width:300px;">
+                    <form method="post">
 
-                <!-- Champ Nom -->
-                <div class="mb-3">
-                    <label class="form-label" style="color: rgb(90, 251, 216);">Nom:</label>
-                    <input type="text" class="form-control" name="nom"
-                        value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>">
-                    <div class="text-danger"><?= $nomErr ?></div>
+                        <div class="mb-3">
+                            <label>Nom</label>
+                            <input type="text" name="nom" class="form-control" value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>">
+                            <div class="text-danger"><?= $nomErr ?></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Prénom</label>
+                            <input type="text" name="prenom" class="form-control" value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>">
+                            <div class="text-danger"><?= $prenomErr ?></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
+                            <div class="text-danger"><?= $emailErr ?> <?= $emailExistErr ?></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Mot de passe</label>
+                            <input type="password" name="password" class="form-control">
+                            <div class="text-danger"><?= $passwordErr ?></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Téléphone</label>
+                            <input type="text" name="telephone" class="form-control" value="<?= htmlspecialchars($_POST['telephone'] ?? '') ?>">
+                            <div class="text-danger"><?= $telephoneErr ?></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Rôle</label>
+                            <div>
+                                <input type="radio" name="role" value="Admin" class="form-check-input"
+                                    <?= (isset($_POST['role']) && $_POST['role'] === 'Admin') ? 'checked' : '' ?>>
+                                <label class="form-check-label me-3">Admin</label>
+
+                                <input type="radio" name="role" value="Client" class="form-check-input"
+                                    <?= (isset($_POST['role']) && $_POST['role'] === 'Client') ? 'checked' : '' ?>>
+                                <label class="form-check-label">Client</label>
+                            </div>
+                            <div class="text-danger"><?= $roleErr ?></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" name="submit" class="btn btn-success">Enregistrer</button>
+                            <a href="userdash.php" class="btn btn-secondary">Annuler</a>
+                        </div>
+
+                    </form>
                 </div>
-
-                <!-- Champ Prénom -->
-                <div class="mb-3">
-                    <label class="form-label" style="color:rgb(90, 251, 216);">Prénom:</label>
-                    <input type="text" class="form-control" name="prenom"
-                        value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>">
-                    <div class="text-danger"><?= $prenomErr ?></div>
-                </div>
-
-                <!-- Champ Email -->
-                <div class="mb-3">
-                    <label class="form-label" style="color: rgb(90, 251, 216);">Email:</label>
-                    <input type="email" class="form-control" name="email"
-                        value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
-                    <div class="text-danger">
-                        <?= $emailErr ?>
-                        <?= $emailExistErr ?> <!-- Afficher l'erreur d'unicité -->
-                    </div>
-                </div>
-
-                <!-- Champ Mot de passe -->
-                <div class="mb-3">
-                    <label class="form-label" style="color:rgb(90, 251, 216);">Mot de passe:</label>
-                    <input type="password" class="form-control" name="password">
-                    <div class="text-danger"><?= $passwordErr ?></div>
-                </div>
-
-                <!-- Champ Téléphone -->
-                <div class="mb-3">
-                    <label class="form-label" style="color: rgb(90, 251, 216);">Téléphone:</label>
-                    <input type="text" class="form-control" name="telephone"
-                        value="<?= htmlspecialchars($_POST['telephone'] ?? '') ?>">
-                    <div class="text-danger"><?= $telephoneErr ?></div>
-                </div>
-
-                <!-- Champ Rôle -->
-                <div class="mb-3">
-                    <label style="color: rgb(90, 251, 216);">Role:</label>
-                    <div class="text-danger"><?= $roleErr ?></div>
-                    <div>
-                        <input type="radio" class="form-check-input" name="role" id="admin" value="Admin"
-                            <?= (isset($_POST['role']) && $_POST['role'] === 'Admin') ? 'checked' : '' ?>>
-                        <label for="admin" class="form-input-label" style="color: rgb(90, 251, 216);">Admin</label>
-
-                        <input type="radio" class="form-check-input" name="role" id="client" value="Client"
-                            <?= (isset($_POST['role']) && $_POST['role'] === 'Client') ? 'checked' : '' ?>>
-                        <label for="client" class="form-input-label" style="color: rgb(90, 251, 216);">Client</label>
-                    </div>
-                </div>
-
-                <div>
-                    <button type="submit" class="btn btn-success" name="submit">Enregistrer</button>
-                    <a href="userdash.php" class="btn btn-danger">Annuler</a>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -1,37 +1,46 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    // Pas connecté, rediriger
+    header('Location: inscription.php');
+    exit();
+}
+$userData = $_SESSION['user']; // Récupérer les infos utilisateur
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <title>WoOx Travel Bootstrap 5 Theme</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Green Stay Web Site</title>
+    
     <!-- Bootstrap core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="../../assets/css/fontawesome.css">
     <link rel="stylesheet" href="../../assets/css/templatemo-woox-travel.css">
     <link rel="stylesheet" href="../../assets/css/owl.css">
     <link rel="stylesheet" href="../../assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
-
+    
+    <style>
+        /* Styles pour les messages d'erreur de validation */
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
+        }
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
@@ -45,7 +54,6 @@ https://templatemo.com/tm-580-woox-travel
     </div>
     <!-- ***** Preloader End ***** -->
 
-    <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -53,19 +61,18 @@ https://templatemo.com/tm-580-woox-travel
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <img src="../../assets/images/logo.png" alt="">
+                            <img src="../../assets/images/logo.png.png" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
+                        <ul class="nav" style="display: flex; align-items: center; flex-wrap: nowrap;">
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="deals.html">Deals</a></li>
                             <li><a href="reservation.html">Reservation</a></li>
                             <li><a href="reservation.html">Book Yours</a></li>
-                            <li><a href="../../Controller/logout.php" id="logout" class="logout-btn">
-                                    <i class="fas fa-sign-out-alt"></i> Déconnexion
-                                </a></li>
+                            <li><a href="updateProfile.php" id="edit-profile-btn"><i class="fas fa-user-edit"></i> Modifier Profil</a></li>
+                            <li><a href="../../Controller/logout.php" id="logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -408,7 +415,7 @@ https://templatemo.com/tm-580-woox-travel
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights reserved.
+                    <p>Copyright © 2036 <a href="#">Green Stay</a> Company. All rights reserved.
                         <br>Design: <a href="https://templatemo.com" target="_blank"
                             title="free CSS templates">TemplateMo</a>
                     </p>
@@ -444,15 +451,274 @@ https://templatemo.com/tm-580-woox-travel
             bannerTimer = setInterval(bannerSwitcher, 5000)
         });
     </script>
+    <!-- filepath: c:\xampp\htdocs\Projet\Projet\View\FrontOffice\home.php -->
+<!-- ...existing code... -->
+    <div id="edit-profile-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Modifier Profil</h2>
+            <form id="edit-profile-form">
+                <input type="hidden" id="id" name="id" value="<?php echo htmlspecialchars($userData['id']); ?>">
+                
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" class="form-control" 
+                        value="<?php echo htmlspecialchars($userData['nom']); ?>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" class="form-control" 
+                        value="<?php echo htmlspecialchars($userData['prenom']); ?>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" class="form-control" 
+                        value="<?php echo htmlspecialchars($userData['email']); ?>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" class="form-control" 
+                        placeholder="Laissez vide pour ne pas changer">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telephone">Téléphone :</label>
+                    <input type="text" id="telephone" name="telephone" class="form-control" 
+                        value="<?php echo htmlspecialchars($userData['telephone']); ?>" required>
+                </div>
 
-</body>
+                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-</html>
+    <!-- Message de succès -->
+    <div id="success-message" style="display: none; position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); animation: slideIn 0.5s ease-out;">
+        <span style="margin-right: 15px;">✅</span>
+        <span id="success-text">Profil mis à jour avec succès !</span>
+    </div>
 
+    <!-- Message d'erreur -->
+    <div id="error-message" style="display: none; position: fixed; top: 20px; right: 20px; background: #f44336; color: white; padding: 15px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); animation: slideIn 0.5s ease-out;">
+        <span style="margin-right: 15px;">❌</span>
+        <span id="error-text">Une erreur est survenue !</span>
+    </div>
+
+<style>
+    h2 {
+        text-align: center;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    #success-message {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4CAF50;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: slideIn 0.5s ease-out;
+        z-index: 1000;
+    }
+
+    #error-message {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #f44336;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: slideIn 0.5s ease-out;
+        z-index: 1000;
+    }
+
+    #success-message.fade-out, #error-message.fade-out {
+        animation: fadeOut 1s ease-out forwards;
+    }
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        width: 450px;
+        max-width: 90%;
+        position: relative;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .close-btn:hover {
+        color: #ff0000;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        background-color: rgb(0, 175, 194);
+        border: none;
+        padding: 12px;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
 
 <script>
+    const editProfileBtn = document.getElementById('edit-profile-btn');
+    const editProfileModal = document.getElementById('edit-profile-modal');
+    const closeBtn = document.querySelector('.close-btn');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    const successText = document.getElementById('success-text');
+    const errorText = document.getElementById('error-text');
+    const editProfileForm = document.getElementById('edit-profile-form');
+
+    editProfileBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        editProfileModal.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', function () {
+        closeModal();
+    });
+
+    window.addEventListener('click', function (e) {
+        if (e.target === editProfileModal) {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        editProfileModal.style.display = 'none';
+    }
+
+    // Soumission du formulaire sans validation
+editProfileForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(editProfileForm);
+
+    fetch('/Projet/Projet/Controller/updateProfile.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('nom').value = data.user.nom;
+            document.getElementById('prenom').value = data.user.prenom;
+            document.getElementById('email').value = data.user.email;
+            document.getElementById('telephone').value = data.user.telephone;
+
+            // Message succès
+            successText.textContent = "Profil mis à jour avec succès !";
+            successMessage.style.display = 'block';
+
+            setTimeout(() => {
+                successMessage.classList.add('fade-out');
+            }, 3000);
+
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+                successMessage.classList.remove('fade-out');
+            }, 4000);
+
+            closeModal();
+        } else {
+            // Vérifiez si des erreurs spécifiques sont présentes
+            let errorMessages = "";
+            if (data.errors) {
+                for (const field in data.errors) {
+                    errorMessages += data.errors[field] + "<br>";
+                }
+            }
+
+            // Afficher le message d'erreur spécifique
+            errorText.innerHTML = errorMessages || 'Une erreur est survenue lors de la mise à jour.';
+            errorMessage.style.display = 'block';
+
+            setTimeout(() => {
+                errorMessage.classList.add('fade-out');
+            }, 3000);
+
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+                errorMessage.classList.remove('fade-out');
+            }, 4000);
+        }
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+        errorText.textContent = 'Une erreur est survenue.';
+        errorMessage.style.display = 'block';
+    });
+});
+
+
+    // Script de déconnexion
     document.getElementById("logout").addEventListener("click", function (e) {
-        e.preventDefault(); // Empêche le lien de se comporter normalement
+        e.preventDefault();
         if (confirm("Voulez-vous vraiment vous déconnecter ?")) {
             window.location.href = this.href;
         }

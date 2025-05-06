@@ -128,112 +128,115 @@ if (isset($_POST["submit"])) {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Modifier utilisateur</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>Users Dashboard</title>
+    <!-- Style personnalisé -->
+    <style>
+        body {
+            background-color: #f4f7fc;
+        }
+
+        .card {
+            border-radius: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #1D548DFF;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #1D548DFF;
+            border-color: #1D548DFF;
+        }
+    </style>
 </head>
 
-<body style="background-color: #1D548DFF;">
-<nav class="navbar navbar-light justify-content-center fs-3 mb-5"
-     style="background-color:rgb(38, 145, 152); color: #1D548DFF;">
-    Users Dashboard
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container-fluid justify-content-center">
+        <span class="navbar-brand mb-0 h1">Modifier l'utilisateur</span>
+    </div>
 </nav>
 
 <div class="container">
-    <div class="text-center mb-4">
-        <h3 style="color:rgb(90, 251, 216);">Modifier les coordonné d'utilisateur</h3>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-4">
+                <h4 class="mb-4 text-center">Modifier les coordonnées d'utilisateur</h4>
+
+                <!-- Ton formulaire de modification ici -->
+                <form action="" method="POST">
+                    <div class="mb-3">
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" class="form-control" value="<?= htmlspecialchars($row['nom']) ?>" required>
+                        <?php if (!empty($nomErr)) : ?><small class="text-danger"><?= htmlspecialchars($nomErr) ?></small><?php endif; ?>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" name="prenom" class="form-control" value="<?= htmlspecialchars($row['prenom']) ?>" required>
+                        <?php if (!empty($prenomErr)) : ?><small class="text-danger"><?= htmlspecialchars($prenomErr) ?></small><?php endif; ?>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($row['email']) ?>" required>
+                        <?php if (!empty($emailErr) || !empty($emailExistErr)) : ?><small class="text-danger"><?= htmlspecialchars($emailErr ?: $emailExistErr) ?></small><?php endif; ?>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" class="form-control" placeholder="Nouveau mot de passe" required>
+                        <?php if (!empty($passwordErr)) : ?><small class="text-danger"><?= htmlspecialchars($passwordErr) ?></small><?php endif; ?>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telephone">Téléphone</label>
+                        <input type="text" name="telephone" class="form-control" value="<?= htmlspecialchars($row['telephone']) ?>" required>
+                        <?php if (!empty($telephoneErr)) : ?><small class="text-danger"><?= htmlspecialchars($telephoneErr) ?></small><?php endif; ?>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="role">Rôle</label>
+                        <select name="role" class="form-control" required>
+                            <option value="">Sélectionner un rôle</option>
+                            <option value="Admin" <?= $row['role'] === 'Admin' ? 'selected' : '' ?>>Admin</option>
+                            <option value="Client" <?= $row['role'] === 'Client' ? 'selected' : '' ?>>Client</option>
+                        </select>
+                        <?php if (!empty($roleErr)) : ?><small class="text-danger"><?= htmlspecialchars($roleErr) ?></small><?php endif; ?>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" name="submit" class="btn btn-primary">Mettre à jour</button>
+                    </div>
+                </form>
+
+                <div class="mt-3 text-center">
+                    <a href="userdash.php">← Retour au dashboard</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-
-
-    <?php
-    $conn = Database::connect();
-
-    $sql = "SELECT * FROM `utilisateurs` WHERE id = :id LIMIT 1";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id', $id);
-    $stmt->execute();
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    ?>
-
-
-<div class="container d-flex justify-content-center">
-    <form action="" method="post" style="width:50vw; min-width:300px;">
-        <div class="mb-3">
-            <label class="form-label" style="color: rgb(90, 251, 216);">Nom:</label>
-            <input type="text" class="form-control" name="nom" 
-                   value="<?= htmlspecialchars($_POST['nom'] ?? $row['nom'] ?? '') ?>">
-            <div class="text-danger"><?= $nomErr ?></div>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label" style="color: rgb(90, 251, 216);">Prénom:</label>
-            <input type="text" class="form-control" name="prenom" 
-                   value="<?= htmlspecialchars($_POST['prenom'] ?? $row['prenom'] ?? '') ?>">
-            <div class="text-danger"><?= $prenomErr ?></div>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label" style="color: rgb(90, 251, 216);">Email:</label>
-            <input type="email" class="form-control" name="email" 
-                   value="<?= htmlspecialchars($_POST['email'] ?? $row['email'] ?? '') ?>">
-            <div class="text-danger">
-                <?= $emailErr ?>
-                <?= $emailExistErr ?>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label" style="color: rgb(90, 251, 216);">Mot de passe:</label>
-            <input type="password" class="form-control" name="password" 
-                   value="<?= htmlspecialchars($_POST['password'] ?? '') ?>">
-            <div class="text-danger"><?= $passwordErr ?></div>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label" style="color: rgb(90, 251, 216);">Téléphone:</label>
-            <input type="text" class="form-control" name="telephone" 
-                   value="<?= htmlspecialchars($_POST['telephone'] ?? $row['telephone'] ?? '') ?>">
-            <div class="text-danger"><?= $telephoneErr ?></div>
-        </div>
-
-        <div class="mb-3">
-            <label style="color:rgb(90, 251, 216);">Role:</label>
-            <div class="text-danger"><?= $roleErr ?></div>
-            <div>
-                <input type="radio" class="form-check-input" name="role" id="admin" value="Admin"
-                    <?= (isset($_POST['role']) && $_POST['role'] === 'Admin') ? 'checked' : (($row['role'] ?? '') === 'Admin' ? 'checked' : '') ?>>
-                <label for="admin" class="form-input-label" style="color: rgb(90, 251, 216);">Admin</label>
-                
-                <input type="radio" class="form-check-input" name="role" id="client" value="Client"
-                    <?= (isset($_POST['role']) && $_POST['role'] === 'Client') ? 'checked' : (($row['role'] ?? '') === 'Client' ? 'checked' : '') ?>>
-                <label for="client" class="form-input-label" style="color:rgb(90, 251, 216);">Client</label>
-            </div>
-        </div>
-
-        <div>
-            <button type="submit" class="btn btn-success" name="submit">Mise a jour</button>
-            <a href="userdash.php" class="btn btn-danger">Annuler</a>
-        </div>
-    </form>
 </div>
-
-</div>
-
 
 </body>
-
 </html>

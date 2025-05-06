@@ -1,0 +1,254 @@
+2025-05-04 23:58:49 [3]: Connection: opening to in-v3.mailjet.com:587, timeout=30, options=array()
+2025-05-04 23:58:49 [3]: Connection: opened
+2025-05-04 23:58:49 [2]: SERVER -> CLIENT: 220 in.mailjet.com ESMTP Mailjet
+
+2025-05-04 23:58:49 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-04 23:58:49 [2]: SERVER -> CLIENT: 250-smtpin.mailjet.com
+250-PIPELINING
+250-SIZE 15728640
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250 CHUNKING
+
+2025-05-04 23:58:49 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-04 23:58:49 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 250-smtpin.mailjet.com
+250-PIPELINING
+250-SIZE 15728640
+250-VRFY
+250-ETRN
+250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250 CHUNKING
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: AUTH CRAM-MD5
+
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 334 PDczMjk2ODY4MDU2NzY3MzYuMTc0NjM5NTkzMEBwci0wMC1zbWluMDAtOHR2bT4=
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 235 2.7.0 Authentication successful
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: MAIL FROM:<no-reply@greenstay.com>
+
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 250 2.1.0 Ok
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: RCPT TO:<fatmaboughoula0@gmail.com>
+
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 250 2.1.5 Ok
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: DATA
+
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Date: Sun, 4 May 2025 23:58:49 +0200
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: To: fatmaboughoula0@gmail.com
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: From: GreenStay <no-reply@greenstay.com>
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Subject: Activez votre compte GreenStay
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Message-ID: <p1BH3tnqcdRZ1pseqSxrDvVTMfZpRnDlgyF4a2iQk@localhost>
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER:  boundary="b1=_p1BH3tnqcdRZ1pseqSxrDvVTMfZpRnDlgyF4a2iQk"
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: --b1=_p1BH3tnqcdRZ1pseqSxrDvVTMfZpRnDlgyF4a2iQk
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Lien : http://localhost/verify.php?token=41663b6b61265bad1bdfa5c10b9a58d3
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: --b1=_p1BH3tnqcdRZ1pseqSxrDvVTMfZpRnDlgyF4a2iQk
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER:             <h2>Activation de compte</h2>
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER:             <p>Cliquez sur ce lien pour activer votre compte :</p>
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER:             <a href='http://localhost/verify.php?token=41663b6b61265bad1bdfa5c10b9a58d3'>http://localhost/verify.php?token=41663b6b61265bad1bdfa5c10b9a58d3</a>
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER:             <p>Valable 24 heures</p>
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER:         
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: --b1=_p1BH3tnqcdRZ1pseqSxrDvVTMfZpRnDlgyF4a2iQk--
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: 
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: .
+
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 250 OK queued as 0e611c7c-b02c-4047-b387-fdd3d1663fd4
+
+2025-05-04 23:58:50 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-04 23:58:50 [2]: SERVER -> CLIENT: 221 2.0.0 Bye
+
+2025-05-04 23:58:50 [3]: Connection: closed
+2025-05-05 00:00:50 [3]: Connection: opening to in-v3.mailjet.com:587, timeout=30, options=array()
+2025-05-05 00:00:50 [3]: Connection: opened
+2025-05-05 00:00:50 [2]: SERVER -> CLIENT: 220 in.mailjet.com ESMTP Mailjet
+
+2025-05-05 00:00:50 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:00:50 [2]: SERVER -> CLIENT: 250-smtpin.mailjet.com
+250-PIPELINING
+250-SIZE 15728640
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250 CHUNKING
+
+2025-05-05 00:00:50 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 00:00:50 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 250-smtpin.mailjet.com
+250-PIPELINING
+250-SIZE 15728640
+250-VRFY
+250-ETRN
+250-AUTH PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-AUTH=PLAIN LOGIN DIGEST-MD5 CRAM-MD5
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-SMTPUTF8
+250 CHUNKING
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: AUTH CRAM-MD5
+
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 334 PDcxNzEzMjA3NDU1OTkxMzYuMTc0NjM5NjA1MUBwci0wMC1zbWluMDAta3Y0dz4=
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 235 2.7.0 Authentication successful
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: MAIL FROM:<no-reply@greenstay.com>
+
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 250 2.1.0 Ok
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: RCPT TO:<halimtrabelsi73@gmail.com>
+
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 250 2.1.5 Ok
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 00:00:50 +0200
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: To: halimtrabelsi73@gmail.com
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: From: GreenStay <no-reply@greenstay.com>
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Subject: Activez votre compte GreenStay
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Message-ID: <aDm5QV1NsUGb5kXsfopLa5R01WhMUSth9w9iBeKSJdc@localhost>
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER:  boundary="b1=_aDm5QV1NsUGb5kXsfopLa5R01WhMUSth9w9iBeKSJdc"
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: --b1=_aDm5QV1NsUGb5kXsfopLa5R01WhMUSth9w9iBeKSJdc
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Lien : http://localhost/verify.php?token=b745e28e826ca888906b1b6c2012ce94
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: --b1=_aDm5QV1NsUGb5kXsfopLa5R01WhMUSth9w9iBeKSJdc
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER:             <h2>Activation de compte</h2>
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER:             <p>Cliquez sur ce lien pour activer votre compte :</p>
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER:             <a href='http://localhost/verify.php?token=b745e28e826ca888906b1b6c2012ce94'>http://localhost/verify.php?token=b745e28e826ca888906b1b6c2012ce94</a>
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER:             <p>Valable 24 heures</p>
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER:         
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: --b1=_aDm5QV1NsUGb5kXsfopLa5R01WhMUSth9w9iBeKSJdc--
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: .
+
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 250 OK queued as 55ca52bf-6b7b-41fc-ae91-dc26cfc8f5d5
+
+2025-05-05 00:00:51 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 00:00:51 [2]: SERVER -> CLIENT: 221 2.0.0 Bye
+
+2025-05-05 00:00:51 [3]: Connection: closed
