@@ -186,3 +186,19 @@ Stack trace:
 [05-May-2025 15:02:36 Europe/Berlin] Nouvel utilisateur ID: 60
 [05-May-2025 15:11:01 Europe/Berlin] Nouvel utilisateur ID: 61
 [05-May-2025 16:32:31 Europe/Berlin] Nouvel utilisateur ID: 62
+[09-May-2025 13:57:07 Europe/Berlin] reCAPTCHA Error: Échec de la vérification reCAPTCHA. Erreurs: timeout-or-duplicate
+[09-May-2025 13:57:27 Europe/Berlin] Failed login attempt for email: iram@gmail.com
+[09-May-2025 13:57:38 Europe/Berlin] Failed login attempt for email: iram@gmail.com
+[09-May-2025 13:58:10 Europe/Berlin] Failed login attempt for email: iram@gmail.com
+[09-May-2025 13:58:59 Europe/Berlin] Failed login attempt for email: iram@gmail.com
+[09-May-2025 13:59:46 Europe/Berlin] Failed login attempt for email: iram2@ecotech.com
+[09-May-2025 14:00:25 Europe/Berlin] Failed login attempt for email: halim@gmail.com
+[09-May-2025 14:00:36 Europe/Berlin] reCAPTCHA Error: Échec de la vérification reCAPTCHA. Erreurs: timeout-or-duplicate
+[09-May-2025 14:01:13 Europe/Berlin] Failed login attempt for email: iram@gmail.com
+[09-May-2025 14:01:33 Europe/Berlin] Failed login attempt for email: iram@gmail.com
+[09-May-2025 16:10:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method Database::connect() in C:\xampp\htdocs\projet\Controller\UserController.php:23
+Stack trace:
+#0 C:\xampp\htdocs\projet\View\FrontOffice\inscription.php(20): UserController->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\projet\Controller\UserController.php on line 23
+[10-May-2025 11:57:49 Europe/Berlin] Failed login attempt for email: feryel@gmail.com

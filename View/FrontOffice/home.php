@@ -6,6 +6,7 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 $userData = $_SESSION['user']; // Récupérer les infos utilisateur
+
 ?>
 
 <!DOCTYPE html>
@@ -68,9 +69,10 @@ $userData = $_SESSION['user']; // Récupérer les infos utilisateur
                         <ul class="nav" style="display: flex; align-items: center; flex-wrap: nowrap;">
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="deals.html">Deals</a></li>
+                            <li><a href="/projet/public/index.php?action=front_office">Services</a></li>
                             <li><a href="reservation.html">Reservation</a></li>
                             <li><a href="reservation.html">Book Yours</a></li>
+                            <li><a href="listReclamations.php">Réclamations</a></li>
                             <li><a href="updateProfile.php" id="edit-profile-btn"><i class="fas fa-user-edit"></i> Modifier Profil</a></li>
                             <li><a href="../../Controller/logout.php" id="logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
                         </ul>

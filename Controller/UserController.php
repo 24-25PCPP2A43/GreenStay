@@ -20,7 +20,7 @@ if (!class_exists('UserController')) {
 
         public function __construct()
         {
-            $this->db = Database::connect();
+            $this->db = Database::getConnection();
         }
 
         public function testAndSave()

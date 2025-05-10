@@ -15,7 +15,7 @@ if (isset($_POST['submit_phone'])) {
         $code = rand(1000, 9999);
 
         $sid = "AC0729edffd46d22d2629f003d21d10b14";
-        $token = "a9d278fb30ccc4bf76ea2b7fea133e48";
+        $token = "5d9d0e6e2ffef9364b742eb6a746a1e8";
         $messagingServiceSid = "MG8cabe2d097db9942c279a3c73473ae32";
 
         try {

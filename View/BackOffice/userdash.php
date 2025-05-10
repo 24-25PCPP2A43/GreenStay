@@ -5,7 +5,131 @@ require_once __DIR__ . '/../../Controller/UserController.php';
 $loggedUser = $_SESSION['user'] ?? null;
 
 // Connexion à la base de données
-$conn = Database::connect();
+$conn = Database::getConnection();
+// Liste des statuts possibles pour le filtre
+$statuts = [
+    'Nouveau' => 'Nouveau',
+    'En cours de traitement' => 'En cours de traitement',
+    'Traité' => 'Traité',
+    'Résolu' => 'Résolu',
+];
+
+
+// Récupération du statut à filtrer
+$filter_statut = isset($_GET['statut']) ? $_GET['statut'] : '';
+// Pagination pour les réclamations
+$limit_reclamations = 2; // Même nombre d'éléments que les autres tables
+$page_reclamations = isset($_GET['page_reclamations']) ? max(1, intval($_GET['page_reclamations'])) : 1;
+$offset_reclamations = ($page_reclamations - 1) * $limit_reclamations;
+$filter_statut = isset($_GET['statut']) ? $_GET['statut'] : '';
+
+// Requête SQL pour les réclamations avec pagination
+$sql = "SELECT r.id, r.sujet, r.message AS reclamation_message, r.statut, 
+               c.nom, c.prenom, re.date_reservation,
+               rep.message AS reponse_message, rep.date_reponse
+        FROM reclamations r
+        JOIN clients c ON r.client_id = c.id
+        JOIN reservations re ON r.reservation_id = re.id
+        LEFT JOIN reponse rep ON r.id = rep.id_reclamation";
+
+// Filtre par statut si sélectionné
+$where_added = false;
+if ($filter_statut !== '') {
+    $sql .= " WHERE r.statut = ?";
+    $where_added = true;
+}
+
+// Ajout de la pagination avec paramètres positionnels
+$sql .= " LIMIT ? OFFSET ?";
+
+try {
+    // Préparation et exécution de la requête principale
+    $stmt = $conn->prepare($sql);
+    
+    // Liaison des paramètres
+    $param_index = 1;
+    if ($where_added) {
+        $stmt->bindValue($param_index++, $filter_statut, PDO::PARAM_STR);
+    }
+    $stmt->bindValue($param_index++, $limit_reclamations, PDO::PARAM_INT);
+    $stmt->bindValue($param_index, $offset_reclamations, PDO::PARAM_INT);
+    
+    $stmt->execute();
+    $resultReclamations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //reclamations crud feryel
+    // Modifier le statut
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nouveau_statut'], $_POST['id_reclamation'])) {
+    $id = intval($_POST['id_reclamation']);
+    $newStatus = $_POST['nouveau_statut'];
+
+    if (in_array($newStatus, array_keys($statuts))) {
+        $stmt = $conn->prepare("UPDATE reclamations SET statut = ? WHERE id = ?");
+        $stmt->execute([$newStatus, $id]);
+        $_SESSION['alert'] = ['type' => 'success', 'message' => "Statut mis à jour."];
+    }
+    header("Location: " . $_SERVER['PHP_SELF'] . "#reclamations");
+    exit;
+}
+
+// Modifier la réponse
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_reponse'], $_POST['id_reclamation'])) {
+    $id = intval($_POST['id_reclamation']);
+    $message = trim($_POST['message_reponse']);
+
+    // Vérifier si une réponse existe déjà
+    $check = $conn->prepare("SELECT COUNT(*) FROM reponse WHERE id_reclamation = ?");
+    $check->execute([$id]);
+    $exists = $check->fetchColumn();
+
+    if ($exists) {
+        $stmt = $conn->prepare("UPDATE reponse SET message = ?, date_reponse = NOW() WHERE id_reclamation = ?");
+        $stmt->execute([$message, $id]);
+    } else {
+        $stmt = $conn->prepare("INSERT INTO reponse (id_reclamation, message) VALUES (?, ?)");
+        $stmt->execute([$id, $message]);
+    }
+
+    $_SESSION['alert'] = ['type' => 'success', 'message' => "Réponse enregistrée."];
+    header("Location: " . $_SERVER['PHP_SELF'] . "#reclamations");
+    exit;
+}
+
+// Supprimer la réponse
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_reponse'], $_POST['id_reclamation'])) {
+    $id = intval($_POST['id_reclamation']);
+    $stmt = $conn->prepare("DELETE FROM reponse WHERE id_reclamation = ?");
+    $stmt->execute([$id]);
+
+    $_SESSION['alert'] = ['type' => 'success', 'message' => "Réponse supprimée."];
+    header("Location: " . $_SERVER['PHP_SELF'] . "#reclamations");
+    exit;
+}
+
+    // Requête pour compter le nombre total de réclamations
+    $count_sql = "SELECT COUNT(*) FROM reclamations r";
+    if ($filter_statut !== '') {
+        $count_sql .= " WHERE r.statut = ?";
+        $count_stmt = $conn->prepare($count_sql);
+        $count_stmt->bindValue(1, $filter_statut, PDO::PARAM_STR);
+    } else {
+        $count_stmt = $conn->prepare($count_sql);
+    }
+    
+    $count_stmt->execute();
+    $totalReclamations = $count_stmt->fetchColumn();
+    $totalPagesReclamations = ceil($totalReclamations / $limit_reclamations);
+
+} catch (PDOException $e) {
+    die("Erreur de la requête : " . $e->getMessage());
+}
+
+// Couleurs personnalisées des statuts
+$color_palette = [
+    'Nouveau' => '#FF0000',
+    'En cours de traitement' => '#10B981',
+    'Traité' => '#3B82F6',
+    'Résolu' => '#6B7280',
+];
 
 // Gestion des messages de notification
 $alert = isset($_SESSION['alert']) ? $_SESSION['alert'] : null;
@@ -93,6 +217,50 @@ $totalPagesRoles = ceil($totalRoles / $limit_roles);
 } catch (PDOException $e) {
     die("Erreur de requête : " . $e->getMessage());
 }
+// Récupération des statistiques mensuelles
+$sql_statistiques = "SELECT DATE_FORMAT(r.date_creation, '%Y-%m') AS mois_annee, r.statut, COUNT(r.id) AS nombre_reclamations
+                     FROM reclamations r
+                     GROUP BY DATE_FORMAT(r.date_creation, '%Y-%m'), r.statut ORDER BY mois_annee";
+$stmt_stats = $conn->prepare($sql_statistiques);
+$stmt_stats->execute();
+$stats = $stmt_stats->fetchAll(PDO::FETCH_ASSOC);
+
+// Préparation des données
+$labels = [];
+$statuts_reclamations = ['Nouveau', 'En cours de traitement', 'Traité', 'Résolu'];
+$statistiques_par_statut = array_fill_keys($statuts_reclamations, []);
+$data_by_month = [];
+
+foreach ($stats as $row) {
+    $mois = date("M Y", strtotime($row['mois_annee']));
+    if (!in_array($mois, $labels)) {
+        $labels[] = $mois;
+    }
+    $data_by_month[$mois][$row['statut']] = $row['nombre_reclamations'];
+}
+
+// Compléter les données manquantes
+foreach ($labels as $mois) {
+    foreach ($statuts_reclamations as $statut) {
+        $statistiques_par_statut[$statut][] = $data_by_month[$mois][$statut] ?? 0;
+    }
+}
+
+// Tendances par sujet
+$sql_tendances = "SELECT sujet, COUNT(*) AS nombre FROM reclamations GROUP BY sujet ORDER BY nombre DESC";
+$stmt_tendance = $conn->prepare($sql_tendances);
+$stmt_tendance->execute();
+$tendances = $stmt_tendance->fetchAll(PDO::FETCH_ASSOC);
+
+$labels_tendance = [];
+$data_tendance = [];
+$colors_tendance = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#C9CBCF', '#2ecc71', '#e74c3c', '#34495e'];
+
+foreach ($tendances as $i => $tendance) {
+    $labels_tendance[] = $tendance['sujet'];
+    $data_tendance[] = $tendance['nombre'];
+}
+
 
 // Vérifier si un email existe déjà dans la base (sauf pour l'utilisateur en cours de modification)
 function emailExists($conn, $email) {
@@ -287,6 +455,13 @@ if (isset($_GET['delete'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
     <style>
+        #reclamationsSection {
+        display: none; /* Caché par défaut */
+    }
+    
+    .section-container {
+        margin-bottom: 30px; /* Espace entre les sections */
+    }
         .table-dark a {
     color: white !important;
     text-decoration: none;
@@ -345,6 +520,27 @@ if (isset($_GET['delete'])) {
     <a href="#" onclick="toggleUserTable(); return false;"><i class="fas fa-users"></i> Afficher les utilisateurs</a>
     <a href="#" onclick="toggleAccountManagement(); return false;"><i class="fas fa-user-shield"></i> Gestion des comptes</a>
     <a href="#" onclick="toggleStats(); return false;"><i class="fas fa-chart-line"></i> Statistiques</a>
+    <a href="#reclamations" onclick="toggleReclamations(); return false;">
+        <i class="fas fa-envelope-open-text"></i> Réclamations
+    </a>
+   <a href="http://localhost/projet/View/BackOffice/consulter_tendances.php">tendance reclamation</a>
+   <a href="http://localhost/projet/View/BackOffice/consulter_stat.php">stat reclamation</a>
+    
+
+
+<a href="#" onclick="toggleAddForm(); return false;"><i class="fas fa-user-plus"></i> Ajouter un utilisateur</a>
+
+    <!-- Nouveau bouton vers la page services -->
+    <a href="/projet/public/index.php?action=back_office">Services</a>
+    
+
+</div>
+
+
+
+
+
+
     <a href="../../Controller/logout.php"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
 </div>
 
@@ -369,13 +565,15 @@ if (isset($_GET['delete'])) {
     </h1>
 
     <form class="d-flex me-auto ms-3">
-        <input class="form-control me-2" type="search" id="searchInput" placeholder="Recherche..." onkeyup="filterTable()">
+    <input class="form-control me-2" type="search" id="searchInput" placeholder="Recherche..." onkeyup="handleDynamicSearch()">
+
     </form>
 
     <?php if ($loggedUser): ?>
         <div class="d-flex align-items-center text-end">
             <i class="fas fa-user-circle fa-lg me-2 text-primary"></i>
-            <span class="fw-bold"><?= htmlspecialchars($loggedUser['prenom']) ?> <?= htmlspecialchars($loggedUser['nom']) ?></span>
+           <p>Prénom : <?= htmlspecialchars($_SESSION['user']['prenom'] ?? '—') ?></p>
+
         </div>
     <?php endif; ?>
 </div>
@@ -649,7 +847,8 @@ if (isset($_GET['delete'])) {
         <div class="card-body">
             <h5 class="card-title">Gestion des Comptes</h5>
             <div class="table-responsive">
-                <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover" id="reclamationsTable">
+
 
                 <thead class="table-dark">
                     <tr>
@@ -732,6 +931,128 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
 </div>
+</div>
+<!-- Section Réclamations -->
+<div class="container mt-5" id="reclamationsSection" style="display: none;">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Liste des Réclamations</h5>
+            <table class="table table-striped table-hover" id="reclamationsTable">
+
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Sujet</th>
+            <th>Message</th>
+            <th>Statut</th>
+            <th>Date Réservation</th>
+            <th>Réponse</th>
+            <th>Date Réponse</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($resultReclamations as $reclamation): ?>
+            <tr>
+                <td><?= htmlspecialchars($reclamation['id']) ?></td>
+                <td><?= htmlspecialchars($reclamation['prenom'] . ' ' . $reclamation['nom']) ?></td>
+                <td><?= htmlspecialchars($reclamation['sujet']) ?></td>
+                <td><?= htmlspecialchars($reclamation['reclamation_message']) ?></td>
+                <td>
+    <div class="statut-view">
+        <span class="badge" style="background-color: <?= $color_palette[$reclamation['statut']] ?>;">
+            <?= htmlspecialchars($reclamation['statut']) ?>
+        </span>
+        <button type="button" class="btn btn-sm btn-outline-primary ms-2" onclick="toggleStatutEdit(this)">Modifier</button>
+    </div>
+
+    <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>#reclamations" class="statut-edit d-none d-flex mt-2">
+        <input type="hidden" name="id_reclamation" value="<?= $reclamation['id'] ?>">
+        <select name="nouveau_statut" class="form-select form-select-sm me-2" style="min-width:130px;">
+            <?php foreach ($statuts as $key => $label): ?>
+                <option value="<?= $key ?>" <?= $key === $reclamation['statut'] ? 'selected' : '' ?>>
+                    <?= $label ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <button type="submit" class="btn btn-sm btn-success">Enregistrer</button>
+    </form>
+</td>
+
+
+                <td><?= htmlspecialchars($reclamation['date_reservation']) ?></td>
+                <td>
+    <div class="reponse-view d-flex align-items-center">
+        <span><?= htmlspecialchars($reclamation['reponse_message'] ?? '—') ?></span>
+        <button type="button" class="btn btn-sm btn-outline-primary ms-2" onclick="toggleReponseEdit(this)">
+            <i class="fas fa-edit"></i>
+        </button>
+    </div>
+
+    <form method="POST" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>#reclamations" class="reponse-edit d-none d-flex align-items-center mt-2">
+        <input type="hidden" name="id_reclamation" value="<?= $reclamation['id'] ?>">
+        <input type="text" name="message_reponse" value="<?= htmlspecialchars($reclamation['reponse_message'] ?? '') ?>" class="form-control form-control-sm me-2" style="min-width: 200px;">
+        <button type="submit" name="update_reponse" class="btn btn-sm btn-success me-1"><i class="fas fa-save"></i></button>
+        <button type="submit" name="delete_reponse" class="btn btn-sm btn-danger me-1" onclick="return confirm('Supprimer cette réponse ?');"><i class="fas fa-trash"></i></button>
+        <button type="button" class="btn btn-sm btn-secondary" onclick="cancelReponseEdit(this)">
+            <i class="fas fa-times"></i>
+        </button>
+    </form>
+</td>
+
+
+
+                <td><?= htmlspecialchars($reclamation['date_reponse'] ?? '') ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+            
+            <!-- Filtre par statut -->
+            <div class="mb-3">
+                <form method="GET" class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label class="form-label">Filtrer par statut :</label>
+                    </div>
+                    <div class="col-auto">
+                        <select name="statut" class="form-select" onchange="this.form.submit()">
+                            <option value="">Tous</option>
+                            <?php foreach ($statuts as $value => $label): ?>
+                                <option value="<?= $value ?>" <?= $filter_statut === $value ? 'selected' : '' ?>>
+                                    <?= $label ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <input type="hidden" name="page_reclamations" value="1">
+                </form>
+            </div>
+            
+            <div class="table-responsive">
+                <!-- ... votre tableau existant ... -->
+            </div>
+            
+            <!-- Pagination -->
+            <nav>
+                <ul class="pagination justify-content-center mt-3">
+                    <?php for ($i = 1; $i <= $totalPagesReclamations; $i++): ?>
+                        <li class="page-item <?= $i === $page_reclamations ? 'active' : '' ?>">
+                            <a class="page-link" 
+                               href="?page_reclamations=<?= $i ?>&statut=<?= urlencode($filter_statut) ?>#reclamations">
+                                <?= $i ?>
+                            </a>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </nav>
+            
+            <!-- Bouton d'export -->
+            <a href="export_reclamations.php" class="btn btn-outline-success mt-3">
+                <i class="fas fa-file-csv"></i> Exporter en CSV
+            </a>
+        </div>
+    </div>
+</div>
 
 <!-- Modal de bannissement stylisé -->
 <div class="modal fade" id="banModal" tabindex="-1" aria-labelledby="banModalLabel" aria-hidden="true">
@@ -787,7 +1108,11 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
 </div>
+
+
 <script>
+    
+
 function toggleOtherReason(value) {
     const otherContainer = document.getElementById('otherReasonContainer');
     if (value === 'Autre') {
@@ -800,70 +1125,64 @@ function toggleOtherReason(value) {
 }
 </script>
 
-
 <!-- JS Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    // Variables pour stocker les graphiques
-    let userPieChart = null;
-    let banPieChart = null;
-    let banModal = null;
+ // Variables pour stocker les graphiques
+let userPieChart = null;
+let banPieChart = null;
+let banModal = null;
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const pageRolesParam = urlParams.get('page_roles');
+document.addEventListener('DOMContentLoaded', function () {
+    banModal = new bootstrap.Modal(document.getElementById('banModal'));
 
-    // Si on vient pour les rôles, afficher directement la gestion des comptes
-    if (pageRolesParam !== null) {
+    const hash = window.location.hash;
+
+    if (hash === '#reclamations') {
+        toggleReclamations();
+        window.scrollTo(0, 0);
+    } else if (hash === '#accountManagementSection') {
         toggleAccountManagement();
     } else {
-        toggleUserTable(); // sinon afficher le tableau des utilisateurs
+        toggleUserTable(); // par défaut
     }
 
-        
-        // Gestion de l'édition en ligne
-        initInlineEditing();
-        
-        // Initialiser le modal
-        banModal = new bootstrap.Modal(document.getElementById('banModal'));
-        
-        // Fermeture automatique des alertes après 5 secondes
-        const alert = document.querySelector('.alert');
-        if (alert) {
-            setTimeout(() => {
-                const bsAlert = new bootstrap.Alert(alert);
-                bsAlert.close();
-            }, 5000);
-        }
+    // Ensuite : tout ce que tu avais déjà comme initInlineEditing(), validation, etc.
+    initInlineEditing();
 
-        // Validation du formulaire d'ajout
-        const addForm = document.getElementById('addUserFormElement');
-        if (addForm) {
-            addForm.addEventListener('submit', function(event) {
-                if (!this.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                this.classList.add('was-validated');
-            }, false);
-        }
+    const alert = document.querySelector('.alert');
+    if (alert) {
+        setTimeout(() => {
+            const bsAlert = new bootstrap.Alert(alert);
+            bsAlert.close();
+        }, 5000);
+    }
 
-        // Restreindre le champ téléphone à 8 chiffres uniquement
-        const phoneInput = document.getElementById('telephone');
-        if (phoneInput) {
-            phoneInput.addEventListener('input', function() {
-                // N'autoriser que les chiffres
-                this.value = this.value.replace(/[^0-9]/g, '');
-                // Limiter à 8 caractères
-                if (this.value.length > 8) {
-                    this.value = this.value.slice(0, 8);
-                }
-            });
-        }
-    });
+    const addForm = document.getElementById('addUserFormElement');
+    if (addForm) {
+        addForm.addEventListener('submit', function (event) {
+            if (!this.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            this.classList.add('was-validated');
+        }, false);
+    }
+
+    const phoneInput = document.getElementById('telephone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            if (this.value.length > 8) {
+                this.value = this.value.slice(0, 8);
+            }
+        });
+    }
+});
+
 
     function initInlineEditing() {
         // Bouton Éditer
@@ -1061,70 +1380,81 @@ function toggleOtherReason(value) {
     }
 
     function toggleAddForm() {
-        const addForm = document.getElementById("addUserForm");
-        const statsSection = document.getElementById("statsSection");
-        const userTable = document.getElementById("userTableContainer");
-        const accountManagement = document.getElementById("accountManagementSection");
+    hideAllSections();
+    document.getElementById("addUserForm").style.display = "block";
+}
 
-        addForm.style.display = "block";
-        statsSection.style.display = "none";
-        userTable.style.display = "none";
-        accountManagement.style.display = "none";
-    }
+function toggleUserTable() {
+    hideAllSections();
+    document.getElementById("userTableContainer").style.display = "block";
+}
 
-    function toggleStats() {
-        const addForm = document.getElementById("addUserForm");
-        const statsSection = document.getElementById("statsSection");
-        const userTable = document.getElementById("userTableContainer");
-        const accountManagement = document.getElementById("accountManagementSection");
+function toggleStats() {
+    hideAllSections();
+    document.getElementById("statsSection").style.display = "block";
+    if (!userPieChart) createPieChart();
+    if (!banPieChart) createBanPieChart();
+}
 
-        addForm.style.display = "none";
-        statsSection.style.display = "block";
-        userTable.style.display = "none";
-        accountManagement.style.display = "none";
+function toggleAccountManagement() {
+    hideAllSections();
+    document.getElementById("accountManagementSection").style.display = "block";
+}
 
-        // Créer les graphiques seulement si c'est la première fois
-        if (!userPieChart) {
-            createPieChart();
-        }
-        if (!banPieChart) {
-            createBanPieChart();
-        }
-    }
+function toggleReclamations() {
+    hideAllSections();
+    document.getElementById("reclamationsSection").style.display = "block";
+    
+    // Conserver les paramètres de pagination/filtre dans l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page_reclamations') || 1;
+    const statut = urlParams.get('statut') || '';
+    
+    history.pushState(null, null, `?page_reclamations=${page}&statut=${encodeURIComponent(statut)}#reclamations`);
+    window.scrollTo(0, 0);
+}
+// Nouvelle fonction helper pour masquer toutes les sections
+function hideAllSections() {
+    const sections = [
+        "addUserForm",
+        "userTableContainer",
+        "statsSection",
+        "accountManagementSection",
+        "reclamationsSection"
+    ];
+    
+    sections.forEach(id => {
+        document.getElementById(id).style.display = "none";
+    });
+}
+function filterTable() {
+    const filter = document.getElementById("searchInput").value.toLowerCase();
 
-    function toggleUserTable() {
-        const addForm = document.getElementById("addUserForm");
-        const statsSection = document.getElementById("statsSection");
-        const userTable = document.getElementById("userTableContainer");
-        const accountManagement = document.getElementById("accountManagementSection");
+    // Filtrage du tableau des utilisateurs
+    const userRows = document.querySelectorAll("#userTable tbody tr");
+    userRows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    });
 
-        addForm.style.display = "none";
-        statsSection.style.display = "none";
-        userTable.style.display = "block";
-        accountManagement.style.display = "none";
-    }
+    // Filtrage du tableau des réclamations
+    const reclamationRows = document.querySelectorAll("#reclamationsTable tbody tr");
+    reclamationRows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    });
+}
 
-    function toggleAccountManagement() {
-        const addForm = document.getElementById("addUserForm");
-        const statsSection = document.getElementById("statsSection");
-        const userTable = document.getElementById("userTableContainer");
-        const accountManagement = document.getElementById("accountManagementSection");
+    function filterReclamationsTable() {
+    const filter = document.getElementById("searchInput").value.toLowerCase();
+    const rows = document.querySelectorAll("#reclamationsTable tbody tr");
 
-        addForm.style.display = "none";
-        statsSection.style.display = "none";
-        userTable.style.display = "none";
-        accountManagement.style.display = "block";
-    }
+    rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    });
+}
 
-    function filterTable() {
-        const filter = document.getElementById("searchInput").value.toLowerCase();
-        const rows = document.querySelectorAll("#userTable tbody tr");
-
-        rows.forEach(row => {
-            const text = row.innerText.toLowerCase();
-            row.style.display = text.includes(filter) ? "" : "none";
-        });
-    }
 
     function createPieChart() {
         const ctx = document.getElementById('userPieChart').getContext('2d');
@@ -1181,6 +1511,42 @@ function toggleOtherReason(value) {
             }
         });
     }
+    // Gestion du filtre avec pagination
+document.querySelector('#reclamationsSection select[name="statut"]').addEventListener('change', function() {
+    // Réinitialise à la première page quand le filtre change
+    const form = this.closest('form');
+    form.querySelector('input[name="page_reclamations"]').value = 1;
+    form.submit();
+});
+function toggleStatutEdit(button) {
+    const container = button.closest('td');
+    container.querySelector('.statut-view').classList.add('d-none');
+    container.querySelector('.statut-edit').classList.remove('d-none');
+}
+
+function cancelStatutEdit(button) {
+    const container = button.closest('td');
+    container.querySelector('.statut-edit').classList.add('d-none');
+    container.querySelector('.statut-view').classList.remove('d-none');
+}
+
+function toggleReponseEdit(button) {
+    const container = button.closest('td');
+    container.querySelector('.reponse-view').classList.add('d-none');
+    container.querySelector('.reponse-edit').classList.remove('d-none');
+}
+
+function cancelReponseEdit(button) {
+    const container = button.closest('td');
+    container.querySelector('.reponse-edit').classList.add('d-none');
+    container.querySelector('.reponse-view').classList.remove('d-none');
+}
+function handleDynamicSearch() {
+    filterTable(); // pour la table utilisateurs
+    filterReclamationsTable(); // pour la table réclamations
+}
+
+
 </script>
 </body>
 </html>
