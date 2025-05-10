@@ -1,0 +1,2668 @@
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441bc264e2dsm91722015e9.12 - gsmtp
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441bc264e2dsm91722015e9.12 - gsmtp
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441bc264e2dsm91722015e9.12 - gsmtp
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 00:26:23 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441bc264e2dsm91722015e9.12 - gsmtp
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 00:26:22 +0200
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Message-ID: <tKlQpH1YRoGadLO5qxrbsdv9R5n5aE4m2aOSHiFm2Vo@localhost>
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER:  boundary="b1=_tKlQpH1YRoGadLO5qxrbsdv9R5n5aE4m2aOSHiFm2Vo"
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: --b1=_tKlQpH1YRoGadLO5qxrbsdv9R5n5aE4m2aOSHiFm2Vo
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Lien: http://localhost/verify.php?token=a6d82c68ed88387161957ab46781971f
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: --b1=_tKlQpH1YRoGadLO5qxrbsdv9R5n5aE4m2aOSHiFm2Vo
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/verify.php?token=a6d82c68ed88387161957ab46781971f'>ici</a> pour activer votre compte</p>
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: --b1=_tKlQpH1YRoGadLO5qxrbsdv9R5n5aE4m2aOSHiFm2Vo--
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:26:23 [1]: CLIENT -> SERVER: .
+
+2025-05-05 00:26:24 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746397584 5b1f17b1804b1-441bc264e2dsm91722015e9.12 - gsmtp
+
+2025-05-05 00:26:24 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 00:26:24 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441bc264e2dsm91722015e9.12 - gsmtp
+
+2025-05-05 00:52:20 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099b17074sm8645967f8f.95 - gsmtp
+
+2025-05-05 00:52:20 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:52:20 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 00:52:20 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 00:52:20 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 00:52:20 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:52:21 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 00:52:21 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 00:52:21 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 00:52:21 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 00:52:21 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099b17074sm8645967f8f.95 - gsmtp
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 00:52:21 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099b17074sm8645967f8f.95 - gsmtp
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 00:52:21 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099b17074sm8645967f8f.95 - gsmtp
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 00:52:20 +0200
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Message-ID: <t9JdpLv2diIZgue0ZliGXP3ml643zLUW2d1grlbBIk@localhost>
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER:  boundary="b1=_t9JdpLv2diIZgue0ZliGXP3ml643zLUW2d1grlbBIk"
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: --b1=_t9JdpLv2diIZgue0ZliGXP3ml643zLUW2d1grlbBIk
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Lien: http://localhost/verify.php?token=3088f3d2beb55e0dffb825445bd990f8
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: --b1=_t9JdpLv2diIZgue0ZliGXP3ml643zLUW2d1grlbBIk
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/verify.php?token=3088f3d2beb55e0dffb825445bd990f8'>ici</a> pour activer votre compte</p>
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: --b1=_t9JdpLv2diIZgue0ZliGXP3ml643zLUW2d1grlbBIk--
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:52:21 [1]: CLIENT -> SERVER: .
+
+2025-05-05 00:52:22 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746399141 ffacd0b85a97d-3a099b17074sm8645967f8f.95 - gsmtp
+
+2025-05-05 00:52:22 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 00:52:22 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099b17074sm8645967f8f.95 - gsmtp
+
+2025-05-05 00:58:29 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b8a315c8sm113293515e9.35 - gsmtp
+
+2025-05-05 00:58:29 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:58:29 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 00:58:29 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 00:58:29 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 00:58:29 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 00:58:30 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 00:58:30 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 00:58:30 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 00:58:30 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 00:58:30 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 00:58:30 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 00:58:30 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 00:58:30 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 00:58:30 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b8a315c8sm113293515e9.35 - gsmtp
+
+2025-05-05 00:58:30 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 00:58:30 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b8a315c8sm113293515e9.35 - gsmtp
+
+2025-05-05 00:58:30 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 00:58:31 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b8a315c8sm113293515e9.35 - gsmtp
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 00:58:26 +0200
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Message-ID: <I9oufMb2XxAOhh9JJZgft7HAYR7pipAfrlqreDclQ@localhost>
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER:  boundary="b1=_I9oufMb2XxAOhh9JJZgft7HAYR7pipAfrlqreDclQ"
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: --b1=_I9oufMb2XxAOhh9JJZgft7HAYR7pipAfrlqreDclQ
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Lien: http://localhost/verify.php?token=37440116676700e33d6a6a09b937f1d2
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: --b1=_I9oufMb2XxAOhh9JJZgft7HAYR7pipAfrlqreDclQ
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/verify.php?token=37440116676700e33d6a6a09b937f1d2'>ici</a> pour activer votre compte</p>
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: --b1=_I9oufMb2XxAOhh9JJZgft7HAYR7pipAfrlqreDclQ--
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: 
+
+2025-05-05 00:58:31 [1]: CLIENT -> SERVER: .
+
+2025-05-05 00:58:32 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746399512 5b1f17b1804b1-441b8a315c8sm113293515e9.35 - gsmtp
+
+2025-05-05 00:58:32 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 00:58:32 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b8a315c8sm113293515e9.35 - gsmtp
+
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099b172b3sm8649510f8f.90 - gsmtp
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099b172b3sm8649510f8f.90 - gsmtp
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:02:53 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099b172b3sm8649510f8f.90 - gsmtp
+
+2025-05-05 01:02:53 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:02:54 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099b172b3sm8649510f8f.90 - gsmtp
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:02:53 +0200
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Message-ID: <vEgXjtbmOPRc7g1HqNgEQgMfQoZVP4TjXMewQGg3L4@localhost>
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER:  boundary="b1=_vEgXjtbmOPRc7g1HqNgEQgMfQoZVP4TjXMewQGg3L4"
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: --b1=_vEgXjtbmOPRc7g1HqNgEQgMfQoZVP4TjXMewQGg3L4
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Lien: http://localhost/verify.php?token=eb57fb3ceae922e2e86dd6d5e9bd6fe5
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: --b1=_vEgXjtbmOPRc7g1HqNgEQgMfQoZVP4TjXMewQGg3L4
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/verify.php?token=eb57fb3ceae922e2e86dd6d5e9bd6fe5'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: --b1=_vEgXjtbmOPRc7g1HqNgEQgMfQoZVP4TjXMewQGg3L4--
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:02:54 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746399774 ffacd0b85a97d-3a099b172b3sm8649510f8f.90 - gsmtp
+
+2025-05-05 01:02:54 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:02:54 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099b172b3sm8649510f8f.90 - gsmtp
+
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b89ee171sm113596805e9.17 - gsmtp
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b89ee171sm113596805e9.17 - gsmtp
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:09:12 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b89ee171sm113596805e9.17 - gsmtp
+
+2025-05-05 01:09:12 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:09:13 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b89ee171sm113596805e9.17 - gsmtp
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:09:11 +0200
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Message-ID: <QFh5znz0VdmxQPvUHKCR85k4KBlNDSFBmVuWZsAt8Y@localhost>
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER:  boundary="b1=_QFh5znz0VdmxQPvUHKCR85k4KBlNDSFBmVuWZsAt8Y"
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: --b1=_QFh5znz0VdmxQPvUHKCR85k4KBlNDSFBmVuWZsAt8Y
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Lien: http://localhost/verify.php?token=70867154237563b87f1fd6f7b09750cd
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: --b1=_QFh5znz0VdmxQPvUHKCR85k4KBlNDSFBmVuWZsAt8Y
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/verify.php?token=70867154237563b87f1fd6f7b09750cd'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: --b1=_QFh5znz0VdmxQPvUHKCR85k4KBlNDSFBmVuWZsAt8Y--
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:09:13 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400153 5b1f17b1804b1-441b89ee171sm113596805e9.17 - gsmtp
+
+2025-05-05 01:09:13 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:09:13 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b89ee171sm113596805e9.17 - gsmtp
+
+2025-05-05 01:10:42 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b8a31695sm115227505e9.40 - gsmtp
+
+2025-05-05 01:10:42 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:10:42 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:10:42 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b8a31695sm115227505e9.40 - gsmtp
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b8a31695sm115227505e9.40 - gsmtp
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:10:43 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b8a31695sm115227505e9.40 - gsmtp
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:10:42 +0200
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Message-ID: <mt45OcCc6zHPMZp3U7ooyOj5gPfMLsKg5cIHhucbTc@localhost>
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER:  boundary="b1=_mt45OcCc6zHPMZp3U7ooyOj5gPfMLsKg5cIHhucbTc"
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: --b1=_mt45OcCc6zHPMZp3U7ooyOj5gPfMLsKg5cIHhucbTc
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Lien: http://localhost/verify.php?token=a64685a215d51600a35f35d17a5f272c
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: --b1=_mt45OcCc6zHPMZp3U7ooyOj5gPfMLsKg5cIHhucbTc
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/verify.php?token=a64685a215d51600a35f35d17a5f272c'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: --b1=_mt45OcCc6zHPMZp3U7ooyOj5gPfMLsKg5cIHhucbTc--
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:10:43 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:10:44 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400244 5b1f17b1804b1-441b8a31695sm115227505e9.40 - gsmtp
+
+2025-05-05 01:10:44 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:10:44 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b8a31695sm115227505e9.40 - gsmtp
+
+2025-05-05 01:12:13 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099b0fe7asm8642126f8f.61 - gsmtp
+
+2025-05-05 01:12:13 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:12:13 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:12:13 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:12:13 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:12:14 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:12:14 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:12:14 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:12:14 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:12:14 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:12:15 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:12:15 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:12:15 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:12:15 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:12:15 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099b0fe7asm8642126f8f.61 - gsmtp
+
+2025-05-05 01:12:15 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:12:15 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099b0fe7asm8642126f8f.61 - gsmtp
+
+2025-05-05 01:12:15 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:12:16 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099b0fe7asm8642126f8f.61 - gsmtp
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:12:13 +0200
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Message-ID: <fS8NlgPQ2iaRTKIPHIYYlkJHZwJtpJyykeJQqMjkgLU@localhost>
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER:  boundary="b1=_fS8NlgPQ2iaRTKIPHIYYlkJHZwJtpJyykeJQqMjkgLU"
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: --b1=_fS8NlgPQ2iaRTKIPHIYYlkJHZwJtpJyykeJQqMjkgLU
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/View/FrontOffice/verify.php?token=29ee63d5cf24ba9b91c87d06db4f620f
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: --b1=_fS8NlgPQ2iaRTKIPHIYYlkJHZwJtpJyykeJQqMjkgLU
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/Projet/View/FrontOffice/verify.php?token=29ee63d5cf24ba9b91c87d06db4f620f'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: --b1=_fS8NlgPQ2iaRTKIPHIYYlkJHZwJtpJyykeJQqMjkgLU--
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:12:16 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400336 ffacd0b85a97d-3a099b0fe7asm8642126f8f.61 - gsmtp
+
+2025-05-05 01:12:16 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:12:16 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099b0fe7asm8642126f8f.61 - gsmtp
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b2b28796sm159119245e9.33 - gsmtp
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b2b28796sm159119245e9.33 - gsmtp
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b2b28796sm159119245e9.33 - gsmtp
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:13:08 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b2b28796sm159119245e9.33 - gsmtp
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:13:08 +0200
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Message-ID: <KrdoJAebzHoElYcx4skmZMmvTgXBU6a9LdFCY0JyJf0@localhost>
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER:  boundary="b1=_KrdoJAebzHoElYcx4skmZMmvTgXBU6a9LdFCY0JyJf0"
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: --b1=_KrdoJAebzHoElYcx4skmZMmvTgXBU6a9LdFCY0JyJf0
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/View/FrontOffice/verify.php?token=f0ad4c1d015121af65a93bd5332eb58d
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: --b1=_KrdoJAebzHoElYcx4skmZMmvTgXBU6a9LdFCY0JyJf0
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/Projet/View/FrontOffice/verify.php?token=f0ad4c1d015121af65a93bd5332eb58d'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: --b1=_KrdoJAebzHoElYcx4skmZMmvTgXBU6a9LdFCY0JyJf0--
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:13:08 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:13:09 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400389 5b1f17b1804b1-441b2b28796sm159119245e9.33 - gsmtp
+
+2025-05-05 01:13:09 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:13:09 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b2b28796sm159119245e9.33 - gsmtp
+
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b8992b4csm117027275e9.0 - gsmtp
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b8992b4csm117027275e9.0 - gsmtp
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:15:07 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b8992b4csm117027275e9.0 - gsmtp
+
+2025-05-05 01:15:07 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:15:08 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b8992b4csm117027275e9.0 - gsmtp
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:15:07 +0200
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Message-ID: <RbtfI7yvgWYzhX3p9UY8IF5p0W94Pxx9V4UXavDcfLg@localhost>
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER:  boundary="b1=_RbtfI7yvgWYzhX3p9UY8IF5p0W94Pxx9V4UXavDcfLg"
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: --b1=_RbtfI7yvgWYzhX3p9UY8IF5p0W94Pxx9V4UXavDcfLg
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/View/FrontOffice/verify.php?token=e95c8445b73fc285d49ff27d5d746f3c
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: --b1=_RbtfI7yvgWYzhX3p9UY8IF5p0W94Pxx9V4UXavDcfLg
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/Projet/View/FrontOffice/verify.php?token=e95c8445b73fc285d49ff27d5d746f3c'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: --b1=_RbtfI7yvgWYzhX3p9UY8IF5p0W94Pxx9V4UXavDcfLg--
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:15:08 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400508 5b1f17b1804b1-441b8992b4csm117027275e9.0 - gsmtp
+
+2025-05-05 01:15:08 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:15:08 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b8992b4csm117027275e9.0 - gsmtp
+
+2025-05-05 01:17:06 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b2aecb60sm158988165e9.11 - gsmtp
+
+2025-05-05 01:17:06 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b2aecb60sm158988165e9.11 - gsmtp
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b2aecb60sm158988165e9.11 - gsmtp
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:17:07 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b2aecb60sm158988165e9.11 - gsmtp
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:17:06 +0200
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Message-ID: <E7X0vhmkUh0MhKtxHSaCIyeWFAbKOvvF1yM0JYPVQ@localhost>
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER:  boundary="b1=_E7X0vhmkUh0MhKtxHSaCIyeWFAbKOvvF1yM0JYPVQ"
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: --b1=_E7X0vhmkUh0MhKtxHSaCIyeWFAbKOvvF1yM0JYPVQ
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/View/FrontOffice/verify.php?token=b466b32d898eea8c8bb1e94e154f7358
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: --b1=_E7X0vhmkUh0MhKtxHSaCIyeWFAbKOvvF1yM0JYPVQ
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/Projet/View/FrontOffice/verify.php?token=b466b32d898eea8c8bb1e94e154f7358'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: --b1=_E7X0vhmkUh0MhKtxHSaCIyeWFAbKOvvF1yM0JYPVQ--
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:17:07 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:17:08 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400628 5b1f17b1804b1-441b2aecb60sm158988165e9.11 - gsmtp
+
+2025-05-05 01:17:08 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:17:08 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b2aecb60sm158988165e9.11 - gsmtp
+
+2025-05-05 01:18:19 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099b10013sm8610699f8f.65 - gsmtp
+
+2025-05-05 01:18:19 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099b10013sm8610699f8f.65 - gsmtp
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099b10013sm8610699f8f.65 - gsmtp
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:18:20 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099b10013sm8610699f8f.65 - gsmtp
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:18:19 +0200
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Message-ID: <7AxWkdWhFOdXT5npnMaeWGHqwQCFYnUnbdym7fEgAfE@localhost>
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER:  boundary="b1=_7AxWkdWhFOdXT5npnMaeWGHqwQCFYnUnbdym7fEgAfE"
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: --b1=_7AxWkdWhFOdXT5npnMaeWGHqwQCFYnUnbdym7fEgAfE
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Lien: http://localhostProjet/Projet/View/FrontOffice/verify.php?token=c6d3782191ef7f897d8f520615d5e4d3
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: --b1=_7AxWkdWhFOdXT5npnMaeWGHqwQCFYnUnbdym7fEgAfE
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhostProjet/Projet/View/FrontOffice/verify.php?token=c6d3782191ef7f897d8f520615d5e4d3'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: --b1=_7AxWkdWhFOdXT5npnMaeWGHqwQCFYnUnbdym7fEgAfE--
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:18:20 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:18:21 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400701 ffacd0b85a97d-3a099b10013sm8610699f8f.65 - gsmtp
+
+2025-05-05 01:18:21 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:18:21 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099b10013sm8610699f8f.65 - gsmtp
+
+2025-05-05 01:21:01 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441ae456d7dsm113256885e9.1 - gsmtp
+
+2025-05-05 01:21:01 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:21:01 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:21:01 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441ae456d7dsm113256885e9.1 - gsmtp
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441ae456d7dsm113256885e9.1 - gsmtp
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:21:02 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441ae456d7dsm113256885e9.1 - gsmtp
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:21:01 +0200
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Message-ID: <cDlpghxnDXeDVm5lvXBhSMpK3mz5s1yovogJIFXJXU@localhost>
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER:  boundary="b1=_cDlpghxnDXeDVm5lvXBhSMpK3mz5s1yovogJIFXJXU"
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: --b1=_cDlpghxnDXeDVm5lvXBhSMpK3mz5s1yovogJIFXJXU
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=584195b61bb710337215752363d16a78
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: --b1=_cDlpghxnDXeDVm5lvXBhSMpK3mz5s1yovogJIFXJXU
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=584195b61bb710337215752363d16a78'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: --b1=_cDlpghxnDXeDVm5lvXBhSMpK3mz5s1yovogJIFXJXU--
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:21:02 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:21:03 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746400863 5b1f17b1804b1-441ae456d7dsm113256885e9.1 - gsmtp
+
+2025-05-05 01:21:03 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:21:03 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441ae456d7dsm113256885e9.1 - gsmtp
+
+2025-05-05 01:23:25 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099ae32fesm8430543f8f.22 - gsmtp
+
+2025-05-05 01:23:25 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:23:25 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:23:25 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:23:25 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:23:25 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:23:25 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:23:25 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:23:25 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:23:25 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:23:26 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:23:26 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:23:26 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099ae32fesm8430543f8f.22 - gsmtp
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:23:26 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099ae32fesm8430543f8f.22 - gsmtp
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:23:26 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099ae32fesm8430543f8f.22 - gsmtp
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:23:25 +0200
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Message-ID: <1ayuUYE4iA9SxidhdPUQ9R2FBdNogjIf0CtehIERwU@localhost>
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER:  boundary="b1=_1ayuUYE4iA9SxidhdPUQ9R2FBdNogjIf0CtehIERwU"
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: --b1=_1ayuUYE4iA9SxidhdPUQ9R2FBdNogjIf0CtehIERwU
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=cd65c7e2c6e17bdf131181344950fe35
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: --b1=_1ayuUYE4iA9SxidhdPUQ9R2FBdNogjIf0CtehIERwU
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER:         <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER:         <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=cd65c7e2c6e17bdf131181344950fe35'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER:     </div>
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: --b1=_1ayuUYE4iA9SxidhdPUQ9R2FBdNogjIf0CtehIERwU--
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:23:26 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746401006 ffacd0b85a97d-3a099ae32fesm8430543f8f.22 - gsmtp
+
+2025-05-05 01:23:26 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:23:27 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099ae32fesm8430543f8f.22 - gsmtp
+
+2025-05-05 01:32:46 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b89cc50esm117310925e9.8 - gsmtp
+
+2025-05-05 01:32:46 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:32:46 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:32:46 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:32:46 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:32:46 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:32:47 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:32:47 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:32:47 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:32:47 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:32:47 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b89cc50esm117310925e9.8 - gsmtp
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:32:47 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b89cc50esm117310925e9.8 - gsmtp
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:32:47 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b89cc50esm117310925e9.8 - gsmtp
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:32:46 +0200
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Message-ID: <7DbPVwCO6ahumCtxEDqFWBCff9sSyVuyrB7qYIqplvo@localhost>
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER:  boundary="b1=_7DbPVwCO6ahumCtxEDqFWBCff9sSyVuyrB7qYIqplvo"
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: --b1=_7DbPVwCO6ahumCtxEDqFWBCff9sSyVuyrB7qYIqplvo
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=8e75bc78be05864d2028f3428013de063dcc68dcf34c0483f5e29e9373717571
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: --b1=_7DbPVwCO6ahumCtxEDqFWBCff9sSyVuyrB7qYIqplvo
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=8e75bc78be05864d2028f3428013de063dcc68dcf34c0483f5e29e9373717571'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: --b1=_7DbPVwCO6ahumCtxEDqFWBCff9sSyVuyrB7qYIqplvo--
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:47 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746401567 5b1f17b1804b1-441b89cc50esm117310925e9.8 - gsmtp
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b89cc50esm117310925e9.8 - gsmtp
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b2ad781csm159943675e9.8 - gsmtp
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2c0f:f698:c108:fff9:6411:a648:33fd:9c81]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:32:48 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b2ad781csm159943675e9.8 - gsmtp
+
+2025-05-05 01:32:48 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 01:32:49 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b2ad781csm159943675e9.8 - gsmtp
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 01:32:49 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b2ad781csm159943675e9.8 - gsmtp
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 01:32:48 +0200
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Message-ID: <jveWJ8JDKw60PRSaiIwIFpO5wsiFZfgLdTpolaxM@localhost>
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER:  boundary="b1=_jveWJ8JDKw60PRSaiIwIFpO5wsiFZfgLdTpolaxM"
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: --b1=_jveWJ8JDKw60PRSaiIwIFpO5wsiFZfgLdTpolaxM
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=407d7a998f72a2814156c5313f8d9fd0
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: --b1=_jveWJ8JDKw60PRSaiIwIFpO5wsiFZfgLdTpolaxM
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=407d7a998f72a2814156c5313f8d9fd0'>ici</a> pour activer votre compte</p>
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: --b1=_jveWJ8JDKw60PRSaiIwIFpO5wsiFZfgLdTpolaxM--
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: 
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: .
+
+2025-05-05 01:32:49 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746401569 5b1f17b1804b1-441b2ad781csm159943675e9.8 - gsmtp
+
+2025-05-05 01:32:49 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 01:32:49 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b2ad781csm159943675e9.8 - gsmtp
+
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099b17074sm10523449f8f.95 - gsmtp
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099b17074sm10523449f8f.95 - gsmtp
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: RCPT TO:<walabentahar0@gmail.com>
+
+2025-05-05 15:00:39 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099b17074sm10523449f8f.95 - gsmtp
+
+2025-05-05 15:00:39 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 15:00:40 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099b17074sm10523449f8f.95 - gsmtp
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 15:00:38 +0200
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: To: walabentahar0@gmail.com
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Message-ID: <EJnysfMRYfesYXeXsKKVG31MAwAk3W0urlgfj8@localhost>
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER:  boundary="b1=_EJnysfMRYfesYXeXsKKVG31MAwAk3W0urlgfj8"
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: --b1=_EJnysfMRYfesYXeXsKKVG31MAwAk3W0urlgfj8
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=d09ec88e97a1e503dbacce2ede8ef13fa71043695e86de7edeb0b1a546b9377f
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: --b1=_EJnysfMRYfesYXeXsKKVG31MAwAk3W0urlgfj8
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=d09ec88e97a1e503dbacce2ede8ef13fa71043695e86de7edeb0b1a546b9377f'>ici</a> pour activer votre compte</p>
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: --b1=_EJnysfMRYfesYXeXsKKVG31MAwAk3W0urlgfj8--
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: .
+
+2025-05-05 15:00:40 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746450040 ffacd0b85a97d-3a099b17074sm10523449f8f.95 - gsmtp
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 15:00:40 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099b17074sm10523449f8f.95 - gsmtp
+
+2025-05-05 15:00:40 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099ae0bb5sm10181620f8f.7 - gsmtp
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:00:40 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:00:40 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 15:00:40 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:00:41 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 15:00:41 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:00:41 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:00:41 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:00:41 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099ae0bb5sm10181620f8f.7 - gsmtp
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: RCPT TO:<walabentahar0@gmail.com>
+
+2025-05-05 15:00:41 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099ae0bb5sm10181620f8f.7 - gsmtp
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 15:00:41 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099ae0bb5sm10181620f8f.7 - gsmtp
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 15:00:40 +0200
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: To: walabentahar0@gmail.com
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Message-ID: <3z43CTyuLWAyGmIRORTpFDHm4bFaWlsC1iu8me55jnE@localhost>
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER:  boundary="b1=_3z43CTyuLWAyGmIRORTpFDHm4bFaWlsC1iu8me55jnE"
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: --b1=_3z43CTyuLWAyGmIRORTpFDHm4bFaWlsC1iu8me55jnE
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=c2d1298727dbfeaf2673fd7c205913fe
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: --b1=_3z43CTyuLWAyGmIRORTpFDHm4bFaWlsC1iu8me55jnE
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=c2d1298727dbfeaf2673fd7c205913fe'>ici</a> pour activer votre compte</p>
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: --b1=_3z43CTyuLWAyGmIRORTpFDHm4bFaWlsC1iu8me55jnE--
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:00:41 [1]: CLIENT -> SERVER: .
+
+2025-05-05 15:00:42 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746450041 ffacd0b85a97d-3a099ae0bb5sm10181620f8f.7 - gsmtp
+
+2025-05-05 15:00:42 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 15:00:42 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099ae0bb5sm10181620f8f.7 - gsmtp
+
+2025-05-05 15:02:36 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099b2449dsm10254737f8f.101 - gsmtp
+
+2025-05-05 15:02:36 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:02:36 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:02:36 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 15:02:36 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 15:02:36 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:02:36 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:02:36 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 15:02:36 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 15:02:36 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:02:36 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 15:02:36 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:02:36 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 15:02:36 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:02:37 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099b2449dsm10254737f8f.101 - gsmtp
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:02:37 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099b2449dsm10254737f8f.101 - gsmtp
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 15:02:37 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099b2449dsm10254737f8f.101 - gsmtp
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 15:02:36 +0200
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Message-ID: <ZceEFIw0EazmAp1qS451v6m2xLKo3Ct7uQ2ekXCWQYU@localhost>
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER:  boundary="b1=_ZceEFIw0EazmAp1qS451v6m2xLKo3Ct7uQ2ekXCWQYU"
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: --b1=_ZceEFIw0EazmAp1qS451v6m2xLKo3Ct7uQ2ekXCWQYU
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=13fffc5d5fa275577176e9d8ebfaf1d16a36677eb55b0f58582574f68daaba90
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: --b1=_ZceEFIw0EazmAp1qS451v6m2xLKo3Ct7uQ2ekXCWQYU
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=13fffc5d5fa275577176e9d8ebfaf1d16a36677eb55b0f58582574f68daaba90'>ici</a> pour activer votre compte</p>
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: --b1=_ZceEFIw0EazmAp1qS451v6m2xLKo3Ct7uQ2ekXCWQYU--
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: .
+
+2025-05-05 15:02:37 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746450157 ffacd0b85a97d-3a099b2449dsm10254737f8f.101 - gsmtp
+
+2025-05-05 15:02:37 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099b2449dsm10254737f8f.101 - gsmtp
+
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b2aed5e8sm177864825e9.16 - gsmtp
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:02:38 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b2aed5e8sm177864825e9.16 - gsmtp
+
+2025-05-05 15:02:38 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:02:39 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b2aed5e8sm177864825e9.16 - gsmtp
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 15:02:39 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b2aed5e8sm177864825e9.16 - gsmtp
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 15:02:38 +0200
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Message-ID: <AvUVIGwcVfiqXQLnma0mlOaMY1RqiqQMDFadMqwzO4@localhost>
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER:  boundary="b1=_AvUVIGwcVfiqXQLnma0mlOaMY1RqiqQMDFadMqwzO4"
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: --b1=_AvUVIGwcVfiqXQLnma0mlOaMY1RqiqQMDFadMqwzO4
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=916c095b6d5236d6a64766d9df6ecfee
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: --b1=_AvUVIGwcVfiqXQLnma0mlOaMY1RqiqQMDFadMqwzO4
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=916c095b6d5236d6a64766d9df6ecfee'>ici</a> pour activer votre compte</p>
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: --b1=_AvUVIGwcVfiqXQLnma0mlOaMY1RqiqQMDFadMqwzO4--
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: .
+
+2025-05-05 15:02:39 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746450159 5b1f17b1804b1-441b2aed5e8sm177864825e9.16 - gsmtp
+
+2025-05-05 15:02:39 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 15:02:39 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b2aed5e8sm177864825e9.16 - gsmtp
+
+2025-05-05 15:11:01 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b8a31576sm132713505e9.37 - gsmtp
+
+2025-05-05 15:11:01 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:11:01 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:11:01 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 15:11:02 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 15:11:02 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:11:02 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:11:02 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 15:11:02 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 15:11:02 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:11:02 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 15:11:02 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:11:02 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 15:11:02 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:11:02 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b8a31576sm132713505e9.37 - gsmtp
+
+2025-05-05 15:11:02 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:11:03 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b8a31576sm132713505e9.37 - gsmtp
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 15:11:03 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b8a31576sm132713505e9.37 - gsmtp
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 15:11:01 +0200
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Message-ID: <BWYV23hnZelLiw80oLOL2rMZhX3STtokIn2K2bSHNpQ@localhost>
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER:  boundary="b1=_BWYV23hnZelLiw80oLOL2rMZhX3STtokIn2K2bSHNpQ"
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: --b1=_BWYV23hnZelLiw80oLOL2rMZhX3STtokIn2K2bSHNpQ
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=532e0e3adb51dc53503fd5818dd88d908ebbd49c528f0df29aff02cac7c9b65e
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: --b1=_BWYV23hnZelLiw80oLOL2rMZhX3STtokIn2K2bSHNpQ
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=532e0e3adb51dc53503fd5818dd88d908ebbd49c528f0df29aff02cac7c9b65e'>ici</a> pour activer votre compte</p>
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: --b1=_BWYV23hnZelLiw80oLOL2rMZhX3STtokIn2K2bSHNpQ--
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: .
+
+2025-05-05 15:11:03 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746450663 5b1f17b1804b1-441b8a31576sm132713505e9.37 - gsmtp
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 15:11:03 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b8a31576sm132713505e9.37 - gsmtp
+
+2025-05-05 15:11:03 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b89cc67fsm135915375e9.5 - gsmtp
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:11:03 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 15:11:03 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 15:11:03 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b89cc67fsm135915375e9.5 - gsmtp
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b89cc67fsm135915375e9.5 - gsmtp
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b89cc67fsm135915375e9.5 - gsmtp
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 15:11:03 +0200
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Message-ID: <Wdq1FllakOm38Ud1tAJfPiDBFrdEVc6rItFxfBDN4@localhost>
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER:  boundary="b1=_Wdq1FllakOm38Ud1tAJfPiDBFrdEVc6rItFxfBDN4"
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: --b1=_Wdq1FllakOm38Ud1tAJfPiDBFrdEVc6rItFxfBDN4
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=be59d60d84b6930d0d0fc2c052552d45
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: --b1=_Wdq1FllakOm38Ud1tAJfPiDBFrdEVc6rItFxfBDN4
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=be59d60d84b6930d0d0fc2c052552d45'>ici</a> pour activer votre compte</p>
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: --b1=_Wdq1FllakOm38Ud1tAJfPiDBFrdEVc6rItFxfBDN4--
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: 
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: .
+
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746450664 5b1f17b1804b1-441b89cc67fsm135915375e9.5 - gsmtp
+
+2025-05-05 15:11:04 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 15:11:04 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b89cc67fsm135915375e9.5 - gsmtp
+
+2025-05-05 16:32:31 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP ffacd0b85a97d-3a099ae32fesm10421325f8f.22 - gsmtp
+
+2025-05-05 16:32:31 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 16:32:31 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 16:32:31 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 16:32:31 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 16:32:32 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 16:32:32 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 16:32:32 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 16:32:32 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 16:32:32 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 16:32:32 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 16:32:32 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 16:32:32 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 16:32:32 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 16:32:32 [2]: SERVER -> CLIENT: 250 2.1.0 OK ffacd0b85a97d-3a099ae32fesm10421325f8f.22 - gsmtp
+
+2025-05-05 16:32:32 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 16:32:32 [2]: SERVER -> CLIENT: 250 2.1.5 OK ffacd0b85a97d-3a099ae32fesm10421325f8f.22 - gsmtp
+
+2025-05-05 16:32:32 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 16:32:33 [2]: SERVER -> CLIENT: 354 Go ahead ffacd0b85a97d-3a099ae32fesm10421325f8f.22 - gsmtp
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 16:32:31 +0200
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Message-ID: <bk2c85uSq0RoUhMv7PkuUNNDXLZ6lMyNiQfxNiENc@localhost>
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER:  boundary="b1=_bk2c85uSq0RoUhMv7PkuUNNDXLZ6lMyNiQfxNiENc"
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: --b1=_bk2c85uSq0RoUhMv7PkuUNNDXLZ6lMyNiQfxNiENc
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=6f6e70b98a3651c06eed268000d0f1e40e572754efd65ebb9b6e64274ec7127f
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: --b1=_bk2c85uSq0RoUhMv7PkuUNNDXLZ6lMyNiQfxNiENc
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=6f6e70b98a3651c06eed268000d0f1e40e572754efd65ebb9b6e64274ec7127f'>ici</a> pour activer votre compte</p>
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: --b1=_bk2c85uSq0RoUhMv7PkuUNNDXLZ6lMyNiQfxNiENc--
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: .
+
+2025-05-05 16:32:33 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746455552 ffacd0b85a97d-3a099ae32fesm10421325f8f.22 - gsmtp
+
+2025-05-05 16:32:33 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 16:32:33 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection ffacd0b85a97d-3a099ae32fesm10421325f8f.22 - gsmtp
+
+2025-05-05 16:32:33 [2]: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-441b8a31695sm136923605e9.40 - gsmtp
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 16:32:34 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: STARTTLS
+
+2025-05-05 16:32:34 [2]: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: EHLO localhost
+
+2025-05-05 16:32:34 [2]: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [196.203.207.178]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: AUTH LOGIN
+
+2025-05-05 16:32:34 [2]: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 16:32:34 [2]: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: [credentials hidden]
+2025-05-05 16:32:34 [2]: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: MAIL FROM:<iramtrabelsi30@gmail.com>
+
+2025-05-05 16:32:34 [2]: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-441b8a31695sm136923605e9.40 - gsmtp
+
+2025-05-05 16:32:34 [1]: CLIENT -> SERVER: RCPT TO:<iramtrabelsi30@gmail.com>
+
+2025-05-05 16:32:35 [2]: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-441b8a31695sm136923605e9.40 - gsmtp
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: DATA
+
+2025-05-05 16:32:35 [2]: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-441b8a31695sm136923605e9.40 - gsmtp
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Date: Mon, 5 May 2025 16:32:33 +0200
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: To: iramtrabelsi30@gmail.com
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: From: GreenStay <iramtrabelsi30@gmail.com>
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Subject: Activation de votre compte GreenStay
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Message-ID: <xKqPnlvO25yOv1kZZvtBTc75Nh8GKScbQWoOnL2j8@localhost>
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: MIME-Version: 1.0
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER:  boundary="b1=_xKqPnlvO25yOv1kZZvtBTc75Nh8GKScbQWoOnL2j8"
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: --b1=_xKqPnlvO25yOv1kZZvtBTc75Nh8GKScbQWoOnL2j8
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Activation de compte GreenStay
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Lien: http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=5e3b9af71e6604d81f7088f393c6f29c
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: --b1=_xKqPnlvO25yOv1kZZvtBTc75Nh8GKScbQWoOnL2j8
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto'>
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER:                 <h2 style='color:#1C4771'>Activation de compte</h2>
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER:                 <p>Cliquez <a href='http://localhost/Projet/Projet/View/FrontOffice/verify.php?token=5e3b9af71e6604d81f7088f393c6f29c'>ici</a> pour activer votre compte</p>
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER:             </div>
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: --b1=_xKqPnlvO25yOv1kZZvtBTc75Nh8GKScbQWoOnL2j8--
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: 
+
+2025-05-05 16:32:35 [1]: CLIENT -> SERVER: .
+
+2025-05-05 16:32:36 [2]: SERVER -> CLIENT: 250 2.0.0 OK  1746455555 5b1f17b1804b1-441b8a31695sm136923605e9.40 - gsmtp
+
+2025-05-05 16:32:36 [1]: CLIENT -> SERVER: QUIT
+
+2025-05-05 16:32:36 [2]: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-441b8a31695sm136923605e9.40 - gsmtp
+
