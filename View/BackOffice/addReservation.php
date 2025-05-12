@@ -1,0 +1,298 @@
+<?php
+// View/addReservation.php
+require_once '../Controller/ReservationController.php';
+require_once '../Controller/LogementController.php';
+require_once __DIR__ . '/../Model/Config.php';
+require_once __DIR__ . '/../Controller/EmailService.php'; // Ajout du service d'email
+
+$logementController    = new LogementController();
+$reservationController = new ReservationController();
+$logements             = $logementController->listAvailableLogements();
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $isAvailable = $reservationController->checkAvailability(
+        $_POST['id_logement'],
+        $_POST['date_debut'],
+        $_POST['date_fin']
+    );
+
+    if ($isAvailable) {
+        // 1) Création de l'objet réservation
+        $reservation = new Reservation(
+            null,
+            $_POST['id_logement'],
+            $_POST['nom_client'],
+            $_POST['email_client'],
+            $_POST['date_debut'],
+            $_POST['date_fin'],
+            $_POST['statut']
+        );
+
+        // 2) Ajout de la réservation (enregistrement en base + envoi email)
+        $success = $reservationController->addReservation($reservation);
+
+        if ($success) {
+            // 3) Redirection vers la liste des réservations
+            header('Location: listReservations.php');
+            exit;
+        } else {
+            $error = "Une erreur est survenue lors de l'enregistrement de la réservation.";
+        }
+    } else {
+        $error = "Ce logement n'est pas disponible pour les dates sélectionnées.";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ajouter une réservation</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- SweetAlert -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
+
+    <style>
+        :root { --brand-teal: #00c4cc; }
+
+        /* Sidebar */
+        .sidebar {
+            height:100%; width:250px; position:fixed; top:0; left:0;
+            background:#343a40; padding-top:60px; transition: left .3s;
+        }
+        .sidebar.hidden { left:-250px; }
+        .sidebar a {
+            display:block; color:#f1f1f1; padding:15px 25px;
+            text-decoration:none; transition: background .3s;
+        }
+        .sidebar a:hover { background:#4c555e; }
+
+        /* Content */
+        .content { margin-left:250px; transition: margin-left .3s; }
+        .content.full { margin-left:0; }
+
+        /* Toggle button */
+        .toggle-btn {
+            position:fixed; top:10px; left:250px; z-index:2;
+            width:40px; height:40px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            transition:left .3s;
+        }
+
+        /* Page-heading */
+        .page-heading {
+            background:var(--brand-teal); color:#fff;
+            text-align:center; padding:1.5rem 0;
+        }
+        .page-heading h2 { margin:0; font-weight:600; }
+        .page-heading .main-button { margin-top:.75rem; }
+
+        /* Card wrapper */
+        .form-card {
+            background:#fff; border-radius:.5rem;
+            box-shadow:0 2px 8px rgba(0,0,0,.1);
+            overflow:hidden; margin-top:2rem;
+        }
+        .form-card .card-header {
+            background:var(--brand-teal); color:#fff;
+            text-align:center; font-size:1.25rem; padding:1rem;
+        }
+        .form-card .card-body { padding:2rem; }
+    </style>
+</head>
+<body>
+
+<!-- ☰ Toggle -->
+<button class="btn btn-light toggle-btn" id="toggle-btn" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <a href="../FrontOffice/home.php"><i class="fa-solid fa-house-user"></i> Home Page</a>
+    <a href="addLogement.php"><i class="fas fa-plus-circle"></i> Ajouter un logement</a>
+    <a href="listReservations.php"><i class="fas fa-clipboard-list"></i> Réservations</a>
+    <a href="listLogements.php"><i class="fas fa-building"></i> Logements</a>
+    <a href="statistics.php"><i class="fas fa-chart-line"></i> Statistiques</a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+</div>
+
+<!-- Main content -->
+<div class="content" id="content">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow">
+        <div class="container-fluid">
+            <h1 class="navbar-brand">
+                <img src="../../assets/svg/dash-cryptocurrency-coin-svgrepo-com.svg"
+                     class="action-icon" alt="Dashboard" />
+                Gestion des Réservations
+            </h1>
+        </div>
+    </nav>
+
+    <!-- Page heading -->
+    <section class="page-heading">
+        <div class="container">
+            <h2>Ajouter une réservation</h2>
+            <div class="main-button">
+                <a href="listReservations.php" class="btn btn-light">
+                    <i class="fas fa-arrow-left"></i> Retour à la liste
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Card -->
+    <div class="container">
+        <div class="form-card">
+            <div class="card-header">Détails de la réservation</div>
+            <div class="card-body">
+
+                <?php if (!empty($error)): ?>
+                    <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+                <?php endif; ?>
+
+                <form method="POST" id="addReservationForm" novalidate>
+                    <div class="mb-3">
+                        <label for="id_logement" class="form-label">Logement</label>
+                        <select name="id_logement" id="id_logement" class="form-select" required>
+                            <option value="">-- Choisissez un logement --</option>
+                            <?php foreach($logements as $l): ?>
+                                <option value="<?= $l['id_logement'] ?>">
+                                    <?= htmlspecialchars($l['titre']) ?> —
+                                    <?= htmlspecialchars($l['ville']) ?> (
+                                    <?= number_format($l['prix_par_nuit'],2,',',' ') ?> €/nuit)
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nom_client" class="form-label">Nom du client</label>
+                            <input type="text" name="nom_client" id="nom_client"
+                                   class="form-control" minlength="3" maxlength="100" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email_client" class="form-label">Email du client</label>
+                            <input type="email" name="email_client" id="email_client"
+                                   class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="date_debut" class="form-label">Date d'arrivée</label>
+                            <input type="date" name="date_debut" id="date_debut"
+                                   class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="date_fin" class="form-label">Date de départ</label>
+                            <input type="date" name="date_fin" id="date_fin"
+                                   class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="statut" class="form-label">Statut</label>
+                        <select name="statut" id="statut" class="form-select" required>
+                            <option value="en attente">En attente</option>
+                            <option value="confirmée">Confirmée</option>
+                            <option value="annulée">Annulée</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">
+                        <i class="fas fa-check"></i> Ajouter
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        © 2025 WoOx Travel Company. Tous droits réservés.
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Sidebar toggle
+    function toggleSidebar() {
+        const sb  = document.getElementById('sidebar'),
+            ct  = document.getElementById('content'),
+            btn = document.getElementById('toggle-btn');
+        sb.classList.toggle('hidden');
+        ct.classList.toggle('full');
+        btn.style.left = sb.classList.contains('hidden') ? '0' : '250px';
+    }
+
+    // Client-side validation
+    document.getElementById('addReservationForm').addEventListener('submit', e => {
+        const nom  = document.getElementById('nom_client'),
+            mail = document.getElementById('email_client'),
+            d0   = new Date(document.getElementById('date_debut').value),
+            d1   = new Date(document.getElementById('date_fin').value);
+
+        if (nom.value.length < 3 || nom.value.length > 100) {
+            Swal.fire('Erreur','Le nom doit contenir entre 3 et 100 caractères.','error');
+            e.preventDefault(); return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value)) {
+            Swal.fire('Erreur','Email invalide.','error');
+            e.preventDefault(); return;
+        }
+        if (d1 < d0) {
+            Swal.fire('Erreur','La date de départ doit être après la date d\'arrivée.','error');
+            e.preventDefault(); return;
+        }
+    });
+
+    // Définir les dates minimales
+    document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+
+        const formatDate = date => {
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        };
+
+        document.getElementById('date_debut').setAttribute('min', formatDate(today));
+        document.getElementById('date_fin').setAttribute('min', formatDate(tomorrow));
+
+        document.getElementById('date_debut').addEventListener('change', function() {
+            const startDate = new Date(this.value);
+            const minEndDate = new Date(startDate);
+            minEndDate.setDate(minEndDate.getDate() + 1);
+            document.getElementById('date_fin').setAttribute('min', formatDate(minEndDate));
+
+            // Si la date de fin est avant la nouvelle date de début + 1, mettre à jour
+            const endDateInput = document.getElementById('date_fin');
+            const endDate = new Date(endDateInput.value);
+            if (endDate <= startDate) {
+                endDateInput.value = formatDate(minEndDate);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
