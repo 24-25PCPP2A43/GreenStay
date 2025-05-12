@@ -69,12 +69,40 @@ $liste = $ctrl->listReservations($sortBy, $sortDir);
 
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
+
+<!-- Lien vers export des statistiques PDF -->
     <a href="../FrontOffice/home.php"><i class="fa-solid fa-house-user"></i> Home Page</a>
-    <a href="addReservation.php"><i class="fas fa-plus-circle"></i> Ajouter une réservation</a>
-    <a href="listLogements.php"><i class="fas fa-building"></i> Logements</a>
-    <a href="listReservations.php" class="active"><i class="fas fa-clipboard-list"></i> Réservations</a>
-    <a href="statistics.php"><i class="fas fa-chart-line"></i> Statistiques</a>
-    <a href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+    <a href="userdash.php" onclick="toggleAddForm(); return false;"><i class="fas fa-user-plus"></i> Ajouter un utilisateur</a>
+    <a href="userdash.php" onclick="toggleUserTable(); return false;"><i class="fas fa-users"></i> Afficher les utilisateurs</a>
+
+    <a href="userdash.php" onclick="toggleAccountManagement(); return false;"><i class="fas fa-user-shield"></i> Gestion des comptes</a>
+    
+    <a href="statistics.php" onclick="toggleStats(); return false;"><i class="fas fa-chart-line"></i> Statistiques</a>
+    <a href="listReservations.php"><i class="fas fa-clipboard-list"></i> Gestion des Réservations</a>
+    <a href="listLogements.php" class="active"><i class="fas fa-building"></i> Gestion des Logements</a>
+    <a href="#reclamations" onclick="toggleReclamations(); return false;">
+        <i class="fas fa-envelope-open-text"></i> Réclamations
+    </a>
+   <a href="http://localhost/projet/View/BackOffice/consulter_tendances.php">tendance reclamation</a>
+   <a href="http://localhost/projet/View/BackOffice/consulter_stat.php">stat reclamation</a>
+   
+    
+
+
+
+    <!-- Nouveau bouton vers la page services -->
+    <a href="/projet/public/index.php?action=back_office">Services</a>
+    
+    
+
+</div>
+
+
+
+
+
+
+    <a href="../../Controller/logout.php"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
 </div>
 
 <div class="content">
