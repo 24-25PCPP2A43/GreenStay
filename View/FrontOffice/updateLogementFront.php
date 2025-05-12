@@ -637,7 +637,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <!-- Menu -->
                     <ul class="nav">
-                        <li><a href="">Home</a></li>
+                        <li><a href="home.php">Home</a></li>
                         <li><a href="listReservationFront.php">Reservations</a></li>
                         <li><a href="listLogementFront.php" class="active">Accommodations</a></li>
                         <li><a href="addReservationFront.php">Make Reservation</a></li>

@@ -560,7 +560,7 @@ if (!empty($reservations)) {
 
                     <!-- Menu -->
                     <ul class="nav">
-                        <li><a href="">Home</a></li>
+                        <li><a href="home.php">Home</a></li>
                         <li><a href="listReservationFront.php" class="active">Liste Reservations</a></li>
                         <li><a href="listLogementFront.php">Liste Logements</a></li>
                         <li><a href="addReservationFront.php">Ajouter une Reservation</a></li>
