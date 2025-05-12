@@ -1,9 +1,9 @@
 <?php
 // View/addReservation.php
-require_once '../Controller/ReservationController.php';
-require_once '../Controller/LogementController.php';
-require_once __DIR__ . '/../Model/Config.php';
-require_once __DIR__ . '/../Controller/EmailService.php'; // Ajout du service d'email
+require_once __DIR__ . '/../../Controller/ReservationController.php';
+require_once __DIR__ . '/../../Controller/LogementController.php';
+require_once __DIR__ . '/../../Model/config.php';
+require_once __DIR__ . '/../../Controller/EmailService.php'; // Ajout du service d'email
 
 $logementController    = new LogementController();
 $reservationController = new ReservationController();
@@ -133,8 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <nav class="navbar navbar-expand-lg shadow">
         <div class="container-fluid">
             <h1 class="navbar-brand">
-                <img src="../../assets/svg/dash-cryptocurrency-coin-svgrepo-com.svg"
-                     class="action-icon" alt="Dashboard" />
+                <!--<img src="../../assets/svg/dash-cryptocurrency-coin-svgrepo-com.svg"class="action-icon" alt="Dashboard" />-->
                 Gestion des Réservations
             </h1>
         </div>

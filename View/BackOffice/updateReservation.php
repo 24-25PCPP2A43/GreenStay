@@ -1,7 +1,7 @@
 <?php
 // View/updateReservation.php
-require_once __DIR__ . '/../Controller/ReservationController.php';
-require_once __DIR__ . '/../Controller/LogementController.php';
+require_once __DIR__ . '/../../Controller/ReservationController.php';
+require_once __DIR__ . '/../../Controller/LogementController.php';
 
 $reservationController = new ReservationController();
 $logementController   = new LogementController();

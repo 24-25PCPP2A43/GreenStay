@@ -1,6 +1,6 @@
 <?php
 // View/updateLogement.php
-require_once __DIR__ . '/../Controller/LogementController.php';
+require_once __DIR__ . '/../../Controller/LogementController.php';
 $logementController = new LogementController();
 
 if (isset($_GET['id'])) {

@@ -1,8 +1,8 @@
 <?php
 // View/exportLogementsPDF.php
 //fpdf(conflit)
-require_once __DIR__ . '/../Controller/LogementController.php';
-require_once __DIR__ . '/../vendor/autoload.php';  // Composer autoload
+require_once __DIR__ . '/../../Controller/LogementController.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;

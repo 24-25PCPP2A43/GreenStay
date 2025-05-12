@@ -1,5 +1,5 @@
 <?php
-require_once '../Controller/LogementController.php';
+require_once '/../../Controller/LogementController.php';
 
 // Check if the ID is provided
 if (isset($_GET['id'])) {

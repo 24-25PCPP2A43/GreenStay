@@ -1,6 +1,6 @@
 <?php
 // View/listLogements.php
-require_once __DIR__ . '/../Controller/LogementController.php';
+require_once __DIR__ . '/../../Controller/LogementController.php';
 $logementController = new LogementController();
 $liste = $logementController->listLogements();
 $ctrl   = new LogementController();

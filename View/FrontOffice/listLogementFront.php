@@ -1,6 +1,6 @@
 <?php
 // listLogementFront.php
-require_once '../Controller/LogementController.php';
+require_once __DIR__ . '/../../Controller/LogementController.php';
 $logementController = new LogementController();
 
 // Récupérer les paramètres de recherche et de tri
@@ -57,12 +57,11 @@ if (!empty($logements)) {
     <title>WoOx Travel - Accommodations</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/animate.css">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/owl.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/animate.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/templatemo-woox-travel.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/owl.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <style>
         /* Main container styles */
@@ -862,14 +861,14 @@ if (!empty($logements)) {
 </footer>
 
 <!-- Scripts -->
-<script src="../templatemo_580_woox_travel/vendor/jquery/jquery.min.js"></script>
-<script src="../templatemo_580_woox_travel/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="../templatemo_580_woox_travel/assets/js/isotope.min.js"></script>
-<script src="../templatemo_580_woox_travel/assets/js/owl-carousel.js"></script>
-<script src="../templatemo_580_woox_travel/assets/js/wow.js"></script>
-<script src="../templatemo_580_woox_travel/assets/js/tabs.js"></script>
-<script src="../templatemo_580_woox_travel/assets/js/popup.js"></script>
-<script src="../templatemo_580_woox_travel/assets/js/custom.js"></script>
+<script src="/../../templatemo_580_woox_travel/vendor/jquery/jquery.min.js"></script>
+<script src="/../../templatemo_580_woox_travel/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/../../templatemo_580_woox_travel/assets/js/isotope.min.js"></script>
+<script src="/../../templatemo_580_woox_travel/assets/js/owl-carousel.js"></script>
+<script src="/../../templatemo_580_woox_travel/assets/js/wow.js"></script>
+<script src="/../../templatemo_580_woox_travel/assets/js/tabs.js"></script>
+<script src="/../../templatemo_580_woox_travel/assets/js/popup.js"></script>
+<script src="/../../templatemo_580_woox_travel/assets/js/custom.js"></script>
 
 <script>
     function toggleMenu() {

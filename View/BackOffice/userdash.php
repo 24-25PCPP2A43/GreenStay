@@ -515,9 +515,15 @@ if (isset($_GET['delete'])) {
 
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
+    <a href="listLogements.php"><i class="fas fa-bed"></i> Gestion des logements</a>
+
+<!-- Lien vers export des statistiques PDF -->
+<a href="exportStatisticsPDF.php" target="_blank"><i class="fas fa-file-pdf"></i> Exporter statistiques</a>
+
     <a href="../FrontOffice/home.php"><i class="fa-solid fa-house-user"></i> Home Page</a>
     <a href="#" onclick="toggleAddForm(); return false;"><i class="fas fa-user-plus"></i> Ajouter un utilisateur</a>
     <a href="#" onclick="toggleUserTable(); return false;"><i class="fas fa-users"></i> Afficher les utilisateurs</a>
+
     <a href="#" onclick="toggleAccountManagement(); return false;"><i class="fas fa-user-shield"></i> Gestion des comptes</a>
     <a href="#" onclick="toggleStats(); return false;"><i class="fas fa-chart-line"></i> Statistiques</a>
     <a href="#reclamations" onclick="toggleReclamations(); return false;">
@@ -525,6 +531,7 @@ if (isset($_GET['delete'])) {
     </a>
    <a href="http://localhost/projet/View/BackOffice/consulter_tendances.php">tendance reclamation</a>
    <a href="http://localhost/projet/View/BackOffice/consulter_stat.php">stat reclamation</a>
+   
     
 
 
@@ -532,6 +539,8 @@ if (isset($_GET['delete'])) {
 
     <!-- Nouveau bouton vers la page services -->
     <a href="/projet/public/index.php?action=back_office">Services</a>
+    <a href="listReservations.php"><i class="fas fa-clipboard-list"></i> Réservations</a>
+    <a href="listLogements.php" class="active"><i class="fas fa-building"></i> Logements</a>
     
 
 </div>

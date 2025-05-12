@@ -1,5 +1,5 @@
 <?php
-require_once '../Controller/LogementController.php';
+require_once __DIR__ . '/../../Controller/LogementController.php';
 
 $logementController = new LogementController();
 $error_message = '';
@@ -113,10 +113,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>WoOx Travel - Update Accommodation</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/animate.css">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="../templatemo_580_woox_travel/assets/css/owl.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/animate.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/templatemo-woox-travel.css">
+    <link rel="stylesheet" href="/../../templatemo_580_woox_travel/assets/css/owl.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 

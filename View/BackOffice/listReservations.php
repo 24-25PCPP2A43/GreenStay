@@ -1,6 +1,6 @@
 <?php
 // View/listReservations.php
-require_once __DIR__ . '/../Controller/ReservationController.php';
+require_once __DIR__ . '/../../Controller/ReservationController.php';
 $ctrl    = new ReservationController();
 
 // Récupérer les paramètres de tri depuis l'URL

@@ -1,6 +1,6 @@
 // In deleteReservation.php
 <?php
-require_once '../Controller/ReservationController.php';
+require_once '/../../Controller/ReservationController.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

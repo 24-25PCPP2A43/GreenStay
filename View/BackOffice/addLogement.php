@@ -1,6 +1,6 @@
 <?php
-require_once '../Controller/LogementController.php';
-require_once(__DIR__ . '/../Model/Config.php');
+require_once __DIR__ . '/../../Controller/LogementController.php';
+require_once(__DIR__ . '/../../Model/config.php');
 
 // Traitement du formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
